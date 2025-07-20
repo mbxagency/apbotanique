@@ -1,0 +1,11 @@
+// Exportações dos componentes de seção
+export { default as Hero } from './Hero';
+export { default as QuickInfo } from './QuickInfo';
+export { default as PriceHighlight } from './PriceHighlight';
+export { default as About } from './About';
+export { default as Gallery } from './Gallery';
+export { default as Location } from './Location';
+export { default as Region } from './Region';
+export { default as OptionalItems } from './OptionalItems';
+export { default as CondominiumDetails } from './CondominiumDetails';
+export { default as Contact } from './Contact'; 
