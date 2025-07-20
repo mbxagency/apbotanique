@@ -1,6 +1,6 @@
 'use client';
 
-export default function QuickInfo() {
+export default function QuickInfo () {
   const infoItems = [
     { icon: '📏', value: '~80m²', label: 'Área Privativa' },
     { icon: '🏠', value: '113m²', label: 'Área Total' },

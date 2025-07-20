@@ -1,5 +1,5 @@
-import { useEffect, useCallback } from 'react';
-import { getTracker, initAnalytics } from '@/lib/analytics/tracker';
+import {useEffect, useCallback} from 'react';
+import {getTracker, initAnalytics} from '@/lib/analytics/tracker';
 
 export const useAnalytics = () => {
   useEffect(() => {

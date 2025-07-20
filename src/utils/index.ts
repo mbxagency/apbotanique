@@ -1,6 +1,7 @@
 // Utilitários do projeto Botanique
 
-import { ClassNameInput } from '@/types';
+import {cn} from 'clsx';
+import {ClassNameInput} from '@/types';
 
 /**
  * Combina classes CSS de forma inteligente

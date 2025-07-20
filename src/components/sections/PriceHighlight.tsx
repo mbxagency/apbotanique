@@ -1,6 +1,6 @@
 'use client';
 
-export default function PriceHighlight() {
+export default function PriceHighlight () {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">

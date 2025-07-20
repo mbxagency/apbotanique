@@ -13,64 +13,62 @@ import Video from '@/components/sections/Video';
 
 import Contact from '@/components/sections/Contact';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
-import { useAnalytics } from '@/hooks/useAnalytics';
+import {useAnalytics} from '@/hooks/useAnalytics';
 
-export default function HomePage() {
-  const { trackEvent } = useAnalytics();
+export default function HomePage () {
+  const {trackEvent} = useAnalytics();
 
   const handleWhatsAppClick = (source: string) => {
-    trackEvent('whatsapp_click', { source });
+    trackEvent('whatsapp_click', {source});
   };
 
   const handlePhoneClick = (source: string) => {
-    trackEvent('phone_click', { source });
+    trackEvent('phone_click', {source});
   };
 
   return (
     <main className="min-h-screen bg-white">
       {/* Seção Hero */}
-      <Hero 
+      <Hero
         onWhatsAppClick={() => handleWhatsAppClick('hero')}
         onPhoneClick={() => handlePhoneClick('hero')}
       />
-      
+
       {/* Vídeo do Apartamento */}
       <Video />
-      
+
       {/* Informações Rápidas */}
       <QuickInfo />
-      
+
       {/* Destaque de Preço */}
       <PriceHighlight />
-      
+
       {/* Sobre o Apartamento */}
       <About />
-      
+
       {/* Galeria de Fotos */}
       <Gallery />
-      
+
       {/* Planta do Apartamento */}
       <FloorPlan />
-      
+
       {/* Localização */}
       <Location />
-      
+
       {/* Região */}
       <Region />
-      
 
-      
       {/* Itens Opcionais */}
       <OptionalItems />
-      
+
       {/* Contato */}
-      <Contact 
+      <Contact
         onWhatsAppClick={() => handleWhatsAppClick('contact')}
         onPhoneClick={() => handlePhoneClick('contact')}
       />
-      
+
       {/* WhatsApp Flutuante */}
-      <FloatingWhatsApp 
+      <FloatingWhatsApp
         onClick={() => handleWhatsAppClick('floating')}
       />
     </main>

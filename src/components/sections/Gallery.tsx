@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import {useState} from 'react';
 
-export default function Gallery() {
+export default function Gallery () {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [

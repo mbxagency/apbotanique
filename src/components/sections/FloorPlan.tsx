@@ -1,6 +1,6 @@
 'use client';
 
-export default function FloorPlan() {
+export default function FloorPlan () {
   return (
     <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="container mx-auto px-4">

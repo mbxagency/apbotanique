@@ -1,6 +1,6 @@
 'use client';
 
-export default function Video() {
+export default function Video () {
   return (
     <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
       {/* Background Pattern */}

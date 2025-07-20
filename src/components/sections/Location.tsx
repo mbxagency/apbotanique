@@ -1,6 +1,6 @@
 'use client';
 
-export default function Location() {
+export default function Location () {
   const distances = [
     { icon: '🌳', place: 'Jardim Botânico', distance: '700m', time: '8 min a pé' },
     { icon: '🏥', place: 'Hospital Erasto Gaertner', distance: '1,2km', time: '3 min de carro' },

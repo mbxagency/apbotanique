@@ -1,6 +1,6 @@
 'use client';
 
-export default function Region() {
+export default function Region () {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">

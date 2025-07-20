@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { 
-  Eye, 
-  Users, 
-  MessageCircle, 
+import {useState, useEffect} from 'react';
+import {
+  Eye,
+  Users,
+  MessageCircle,
   TrendingUp,
   BarChart3,
   Settings,
@@ -16,7 +16,7 @@ import {
   Filter,
   Download
 } from 'lucide-react';
-import { useAnalytics } from '@/hooks/useAnalytics';
+import {useAnalytics} from '@/hooks/useAnalytics';
 
 interface VisitData {
   id: string;
@@ -40,7 +40,7 @@ interface ContactData {
   createdAt: string;
 }
 
-export default function AdminPage() {
+export default function AdminPage () {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [visitData, setVisitData] = useState<VisitData[]>([]);
   const [contactData, setContactData] = useState<ContactData[]>([]);

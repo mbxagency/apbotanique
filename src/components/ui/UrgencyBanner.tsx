@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
-export default function UrgencyBanner() {
+export default function UrgencyBanner () {
   const [timeLeft, setTimeLeft] = useState({
     hours: 24,
     minutes: 0,

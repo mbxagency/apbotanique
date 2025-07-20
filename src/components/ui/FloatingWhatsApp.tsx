@@ -4,7 +4,7 @@ interface FloatingWhatsAppProps {
   onClick?: () => void;
 }
 
-export default function FloatingWhatsApp({ onClick }: FloatingWhatsAppProps) {
+export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
   const handleClick = () => {
     const phone = '5541991328657';
     const message = encodeURIComponent(`Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179`);

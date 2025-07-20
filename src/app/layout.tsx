@@ -1,9 +1,9 @@
-import type { Metadata, Viewport } from 'next';
-import { Poppins, Playfair_Display, Montserrat, Inter } from 'next/font/google';
+import type {Metadata, Viewport} from 'next';
+import {Poppins, Playfair_Display, Montserrat, Inter} from 'next/font/google';
 import './globals.css';
 
 // Fontes otimizadas
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
@@ -11,7 +11,7 @@ const poppins = Poppins({
   preload: true,
 });
 
-const playfair = Playfair_Display({ 
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-playfair',
@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
   preload: true,
 });
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-montserrat',
@@ -27,7 +27,7 @@ const montserrat = Montserrat({
   preload: true,
 });
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -164,7 +164,7 @@ const structuredData = {
   ],
 };
 
-export default function RootLayout({
+export default function RootLayout ({
   children,
 }: {
   children: React.ReactNode;
@@ -172,13 +172,13 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${poppins.variable} ${playfair.variable} ${montserrat.variable} ${inter.variable}`}
+      className={`${poppins.variable} ${playfairDisplay.variable} ${montserrat.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />

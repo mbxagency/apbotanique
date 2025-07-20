@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 interface HeroProps {
   onWhatsAppClick?: () => void;
   onPhoneClick?: () => void;
 }
 
-export default function Hero({ onWhatsAppClick, onPhoneClick }: HeroProps) {
+export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const slides = [

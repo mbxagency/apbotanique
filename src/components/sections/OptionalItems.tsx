@@ -1,6 +1,6 @@
 'use client';
 
-export default function OptionalItems() {
+export default function OptionalItems () {
   const optionalItems = [
     {
       name: "Adega de Vinhos Electrolux para 12 Garrafas",
