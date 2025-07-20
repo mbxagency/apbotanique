@@ -12,7 +12,6 @@ import FloorPlan from '@/components/sections/FloorPlan';
 import Video from '@/components/sections/Video';
 import RegionDevelopment from '@/components/sections/RegionDevelopment';
 import PropertyHighlights from '@/components/sections/PropertyHighlights';
-
 import Contact from '@/components/sections/Contact';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import {useAnalytics} from '@/hooks/useAnalytics';
@@ -24,17 +23,10 @@ export default function HomePage () {
     trackEvent('whatsapp_click', {source});
   };
 
-  const handlePhoneClick = (source: string) => {
-    trackEvent('phone_click', {source});
-  };
-
   return (
     <main className="min-h-screen bg-white">
       {/* Seção Hero */}
-      <Hero
-        onWhatsAppClick={() => handleWhatsAppClick('hero')}
-        onPhoneClick={() => handlePhoneClick('hero')}
-      />
+      <Hero />
 
       {/* Vídeo do Apartamento */}
       <Video />
@@ -70,10 +62,7 @@ export default function HomePage () {
       <OptionalItems />
 
       {/* Contato */}
-      <Contact
-        onWhatsAppClick={() => handleWhatsAppClick('contact')}
-        onPhoneClick={() => handlePhoneClick('contact')}
-      />
+      <Contact />
 
       {/* WhatsApp Flutuante */}
       <FloatingWhatsApp

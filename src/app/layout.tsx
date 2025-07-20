@@ -1,6 +1,7 @@
 import type {Metadata, Viewport} from 'next';
 import {Poppins, Playfair_Display, Montserrat, Inter} from 'next/font/google';
 import './globals.css';
+import Header from '@/components/layout/Header';
 
 // Fontes otimizadas
 const poppins = Poppins({
@@ -188,6 +189,7 @@ export default function RootLayout ({
         <meta name="msapplication-TileColor" content="#16a34a" />
       </head>
       <body className="antialiased selection:bg-primary-500 selection:text-white">
+        <Header />
         <div id="root">
           {children}
         </div>

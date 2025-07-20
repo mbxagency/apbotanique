@@ -87,7 +87,8 @@ export default function OptionalItems () {
               Este elegante apartamento de 2 quartos, incluindo uma suíte, está à venda e é uma excelente
               oportunidade para quem busca conforto, estilo e uma localização privilegiada. Situado na
               Av. Prefeito Maurício Fruet, 1270, no bairro Jardim Botânico, este imóvel oferece uma área
-              privativa de 78,81 m² e uma área total de 113,84 m², proporcionando um espaço ideal para toda a família.
+              privativa de ~80 m² e uma área total de ~114 m², proporcionando um espaço ideal para
+              toda a família.
             </p>
           </div>
 

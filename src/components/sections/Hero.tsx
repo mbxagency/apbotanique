@@ -2,165 +2,175 @@
 
 import {useState, useEffect} from 'react';
 
-interface HeroProps {
-  onWhatsAppClick?: () => void;
-  onPhoneClick?: () => void;
-}
+const slides = [
+  {
+    image: '/images/sala/sala1.jpg',
+    title: 'Sala de Estar Elegante',
+    description: 'Ambiente espaçoso e bem iluminado'
+  },
+  {
+    image: '/images/suite/suite1.jpg',
+    title: 'Suíte Principal',
+    description: 'Conforto e privacidade em um só lugar'
+  },
+  {
+    image: '/images/cozinha/cozinha1.jpg',
+    title: 'Cozinha Americana',
+    description: 'Funcional e integrada à sala'
+  },
+  {
+    image: '/images/sacada/sacada1.jpg',
+    title: 'Sacada Gourmet',
+    description: 'Área de lazer com churrasqueira'
+  }
+];
 
-export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
+export default function Hero () {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    {src: '/images/sala/sala1.jpg', alt: 'Apartamento Botanique - Sala de estar'},
-    {src: '/images/suite/suite1.jpg', alt: 'Apartamento Botanique - Suíte principal'},
-    {src: '/images/cozinha/cozinha1.jpg', alt: 'Apartamento Botanique - Cozinha americana'},
-    {src: '/images/quartos/quarto1.jpg', alt: 'Apartamento Botanique - Quarto principal'},
-    {src: '/images/sacada/sacada1.jpg', alt: 'Apartamento Botanique - Sacada'},
-    {src: '/images/fachada/vista.jpg', alt: 'Apartamento Botanique - Vista'}
-  ];
-
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-    return () => clearInterval(interval);
-  }, [slides.length]);
 
-  const changeSlide = (direction: number) => {
-    setCurrentSlide((prev) => {
-      const newSlide = prev + direction;
-      if (newSlide < 0) { return slides.length - 1; }
-      if (newSlide >= slides.length) { return 0; }
-      return newSlide;
-    });
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
   };
 
-  const handleWhatsAppClick = () => {
-    const phone = '5541991328657';
-    const message = encodeURIComponent('Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179');
-
-    const url = `https://wa.me/${phone}?text=${message}`;
-    window.open(url, '_blank');
-
-    if (onWhatsAppClick) {
-      onWhatsAppClick();
-    }
+  const goToPrevious = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const handlePhoneClick = () => {
-    window.location.href = 'tel:+5541991328657';
-
-    if (onPhoneClick) {
-      onPhoneClick();
-    }
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   return (
-    <section className="relative h-screen mt-16 overflow-hidden">
-      {/* Slider */}
-      <div className="relative h-full w-full">
+    <section className="relative h-screen overflow-hidden">
+      {/* Slideshow */}
+      <div className="relative w-full h-full">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+            className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <img
-              src={slide.src}
-              alt={slide.alt}
+              src={slide.image}
+              alt={slide.title}
               className="w-full h-full object-cover"
+              loading="eager"
+              onError={(e) => {
+                console.error(`Erro ao carregar imagem: ${slide.image}`);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={(e) => {
+                e.currentTarget.style.opacity = '1';
+              }}
+              style={{opacity: 0, transition: 'opacity 0.5s ease-in-out'}}
             />
+            <div className="absolute inset-0 bg-black bg-opacity-10" />
           </div>
         ))}
-      </div>
 
-      {/* Slider Controls */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex items-center gap-5 z-10">
+        {/* Overlay com Informações */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white px-4 max-w-4xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+              Residencial Botanique
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-gray-200">
+              {slides[currentSlide]?.title || ''}
+            </p>
+            <p className="text-lg md:text-xl mb-8 text-gray-300">
+              {slides[currentSlide]?.description || ''}
+            </p>
+
+            {/* Informações do Imóvel */}
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-gray-400 line-through mb-1">
+                    R$ 779.000
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+                    R$ 729.000
+                  </div>
+                  <div className="text-sm text-gray-300">Preço com Desconto</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                    R$ 254
+                  </div>
+                  <div className="text-sm text-gray-300">Condomínio</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">
+                    ~80m²
+                  </div>
+                  <div className="text-sm text-gray-300">Área Privativa</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Botões de Ação */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/5541991328657?text=Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber o valor do condomínio. Código: ARA179. Aguardo seu retorno."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                📱 Agendar Visita
+              </a>
+              <a
+                href="#galeria"
+                className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/30 transition-colors duration-300 border border-white/30 flex items-center justify-center gap-2"
+              >
+                📸 Ver Fotos
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Controles do Slideshow */}
         <button
-          onClick={() => changeSlide(-1)}
-          className="bg-white/90 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+          onClick={goToPrevious}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-300"
         >
-          <span className="text-gray-700">‹</span>
+          ‹
+        </button>
+        <button
+          onClick={goToNext}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-300"
+        >
+          ›
         </button>
 
-        <div className="flex gap-2">
+        {/* Indicadores */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
           {slides.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-white scale-125' : 'bg-white/50'
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                index === currentSlide
+                  ? 'bg-white'
+                  : 'bg-white/50 hover:bg-white/75'
               }`}
             />
           ))}
         </div>
-
-        <button
-          onClick={() => changeSlide(1)}
-          className="bg-white/90 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-        >
-          <span className="text-gray-700">›</span>
-        </button>
       </div>
 
-      {/* Hero Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/80 flex items-center justify-center text-center text-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold mb-2 md:mb-3 text-shadow-lg font-display">
-            Apartamento de Luxo
-          </h2>
-          <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold mb-2 text-green-200 font-heading">
-            Edifício Botanique
-          </h3>
-          <p className="text-base md:text-lg lg:text-xl mb-4 opacity-90">
-            Jardim Botânico • Curitiba
-          </p>
-
-          {/* Preço com Desconto */}
-          <div className="mb-6 md:mb-8">
-            <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/30 inline-block">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <div className="text-center">
-                  <div className="text-sm text-gray-300 mb-1">Preço Original</div>
-                  <div className="text-lg md:text-xl font-bold text-gray-400 line-through">R$ 779.000</div>
-                </div>
-                
-                <div className="text-2xl md:text-3xl text-red-400 animate-pulse font-bold">
-                  ↓
-                </div>
-                
-                <div className="text-center">
-                  <div className="text-sm text-green-300 mb-1">Preço com Desconto</div>
-                  <div className="text-2xl md:text-3xl font-bold text-green-400">R$ 729.000</div>
-                </div>
-              </div>
-              
-              <div className="mt-3 text-center">
-                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                  Desconto de R$ 50.000
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-            <button
-              onClick={handleWhatsAppClick}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 md:gap-3 shadow-lg"
-            >
-              <span className="text-xl md:text-2xl">💬</span>
-              <span>Falar no WhatsApp</span>
-            </button>
-
-            <button
-              onClick={handlePhoneClick}
-              className="bg-white/20 hover:bg-white/30 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 border-2 border-white/30 hover:border-white/50 flex items-center justify-center gap-2 md:gap-3 backdrop-blur-sm"
-            >
-              <span className="text-lg md:text-xl">📞</span>
-              <span>Ligar Agora</span>
-            </button>
-          </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>

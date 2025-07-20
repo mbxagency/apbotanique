@@ -9,195 +9,191 @@ interface RouteInfo {
 }
 
 export default function Location () {
-  const [routeInfo, setRouteInfo] = useState<{[key: string]: RouteInfo}>({});
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedDestination, setSelectedDestination] = useState<string>('Jardim Botânico');
+  const [selectedDestination, setSelectedDestination] = useState<string>('');
+  const [routeInfo, setRouteInfo] = useState<Record<string, RouteInfo>>({});
 
   const distances = [
     {
-      icon: '🌳', 
-      place: 'Jardim Botânico', 
-      address: 'Rua Engenheiro Ostoja Roguski, 690 - Jardim Botânico, Curitiba - PR',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      destination: 'Jardim Botânico, Curitiba - PR',
-      coordinates: '-25.4428,-49.2404'
+      place: 'Jardim Botânico',
+      distance: '1,2 km',
+      duration: '3 min',
+      icon: '🌺',
+      address: 'R. Eng. Ostoja Roguski, 690 - Jardim Botânico'
     },
     {
-      icon: '🏪', 
-      place: 'Shopping Jockey Plaza', 
-      address: 'Av. Marechal Floriano Peixoto, 228 - Centro, Curitiba - PR',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      destination: 'Shopping Jockey Plaza, Av. Marechal Floriano Peixoto, 228 - Centro, Curitiba - PR',
-      coordinates: '-25.4428,-49.2404'
+      place: 'Shopping Jockey Plaza',
+      distance: '2,8 km',
+      duration: '7 min',
+      icon: '🛍️',
+      address: 'Av. Pres. Getúlio Vargas, 2645 - Água Verde'
     },
     {
-      icon: '🏥', 
-      place: 'Hospital Cajuru', 
-      address: 'Rua São José, 300 - Centro, Curitiba - PR',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      destination: 'Hospital Cajuru, Rua São José, 300 - Centro, Curitiba - PR',
-      coordinates: '-25.4428,-49.2404'
+      place: 'Hospital Cajuru',
+      distance: '3,1 km',
+      duration: '8 min',
+      icon: '🏥',
+      address: 'R. São José, 300 - Centro'
     },
     {
-      icon: '✈️', 
-      place: 'Aeroporto Afonso Pena', 
-      address: 'Av. Rocha Pombo, 1000 - São José dos Pinhais - PR',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      destination: 'Aeroporto Internacional Afonso Pena, Av. Rocha Pombo, 1000 - São José dos Pinhais - PR',
-      coordinates: '-25.4428,-49.2404'
+      place: 'Aeroporto Afonso Pena',
+      distance: '8,5 km',
+      duration: '15 min',
+      icon: '✈️',
+      address: 'Av. Rocha Pombo, s/n - São José dos Pinhais'
     },
     {
-      icon: '🏞️', 
-      place: 'Parque Barigui', 
-      address: 'Av. Cândido Hartmann, S/N - Bigorrilho, Curitiba - PR',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      destination: 'Parque Barigui, Av. Cândido Hartmann - Bigorrilho, Curitiba - PR',
-      coordinates: '-25.4428,-49.2404'
+      place: 'Parque Barigui',
+      distance: '4,2 km',
+      duration: '10 min',
+      icon: '🌳',
+      address: 'Av. Cândido Hartmann, s/n - Bigorrilho'
     },
     {
-      icon: '🏛️', 
-      place: 'Teatro Guaíra', 
-      address: 'Rua XV de Novembro, 971 - Centro, Curitiba - PR',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      destination: 'Teatro Guaíra, Rua XV de Novembro, 971 - Centro, Curitiba - PR',
-      coordinates: '-25.4428,-49.2404'
+      place: 'Teatro Guaíra',
+      distance: '3,8 km',
+      duration: '9 min',
+      icon: '🎭',
+      address: 'R. XV de Novembro, 971 - Centro'
     }
   ];
 
   const curiosities = [
     {
+      icon: '🌺',
       title: 'Jardim Botânico',
-      description: 'Um dos bairros mais nobres de Curitiba, conhecido por suas mansões e área verde preservada.',
-      icon: '🌿'
+      description: 'Um dos principais cartões postais de Curitiba'
     },
     {
-      title: 'Clima Privilegiado',
-      description: 'Região com temperatura mais amena devido à proximidade com a Serra do Mar.',
-      icon: '🌤️'
+      icon: '🏛️',
+      title: 'Centro Histórico',
+      description: 'Arquitetura preservada e cultura local'
     },
     {
-      title: 'Infraestrutura Completa',
-      description: 'Hospitais, escolas, comércio e serviços próximos, tudo a poucos minutos.',
-      icon: '🏗️'
+      icon: '🌳',
+      title: 'Parques Urbanos',
+      description: 'Mais de 30 parques e áreas verdes'
     },
     {
+      icon: '🚌',
       title: 'Transporte Público',
-      description: 'Fácil acesso a linhas de ônibus e futura estação do metrô.',
-      icon: '🚇'
+      description: 'Sistema integrado de ônibus e BRT'
     }
   ];
 
-  // Função para obter rotas usando Google Maps Directions API
   const getRouteInfo = async (destination: string, placeName: string) => {
-    const origin = 'Av. Prefeito Maurício Fruet, 1270 - Jardim Botânico, Curitiba - PR';
-    
-    // Dados estimados baseados na distância real para os novos destinos
-    const estimatedData = {
-      'Jardim Botânico': { distance: '700m', duration: '8 min a pé' },
-      'Shopping Jockey Plaza': { distance: '3,5km', duration: '8 min de carro' },
-      'Hospital Cajuru': { distance: '4,2km', duration: '10 min de carro' },
-      'Aeroporto Afonso Pena': { distance: '18km', duration: '25 min de carro' },
-      'Parque Barigui': { distance: '3,2km', duration: '7 min de carro' },
-      'Teatro Guaíra': { distance: '4,1km', duration: '9 min de carro' }
-    };
+    const apartmentAddress = 'Av. Prefeito Maurício Fruet, 1270, Jardim Botânico, Curitiba';
+    const destinationAddress = destination;
 
-    // Simular delay de carregamento
-    await new Promise(resolve => setTimeout(resolve, 500));
+    try {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/directions/json?origin=${encodeURIComponent(
+          apartmentAddress
+        )}&destination=${encodeURIComponent(
+          destinationAddress
+        )}&key=YOUR_API_KEY`
+      );
 
-    const data = estimatedData[placeName as keyof typeof estimatedData] || { distance: 'Calculando...', duration: 'Calculando...' };
-    
-    setRouteInfo(prev => ({
-      ...prev,
-      [placeName]: {
-        distance: data.distance,
-        duration: data.duration,
-        loading: false
+      if (response.ok) {
+        const data = await response.json();
+        if (data.routes && data.routes.length > 0) {
+          const route = data.routes[0];
+          const leg = route.legs[0];
+          setRouteInfo(prev => ({
+            ...prev,
+            [placeName]: {
+              distance: leg.distance.text,
+              duration: leg.duration.text,
+              loading: false
+            }
+          }));
+        }
       }
-    }));
+    } catch {
+      // Silently handle error
+    }
   };
-
-  useEffect(() => {
-    // Carregar informações de rota para todos os destinos
-    distances.forEach(item => {
-      getRouteInfo(item.destination, item.place);
-    });
-    setIsLoading(false);
-  }, []);
 
   const handleDestinationClick = (place: string) => {
     setSelectedDestination(place);
   };
 
   const getSelectedMapUrl = () => {
-    const selected = distances.find(item => item.place === selectedDestination);
-    if (!selected) return distances[0]?.mapUrl || '';
-    
-    // URLs específicas do Google Maps com rotas diretas
-    const routeUrls = {
-      'Jardim Botânico': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      'Shopping Jockey Plaza': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      'Hospital Cajuru': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      'Aeroporto Afonso Pena': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      'Parque Barigui': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123',
-      'Teatro Guaíra': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123'
-    };
-    
-    // Criar URL dinâmica com rota do apartamento para o destino
-    const origin = encodeURIComponent('Av. Prefeito Maurício Fruet, 1270 - Jardim Botânico, Curitiba - PR');
-    const destination = encodeURIComponent(selected.destination);
-    
-    // URL do Google Maps Directions com origem e destino
-    return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.965123456789!2d-49.24259288498765!3d-25.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f1c5c5c5c5%3A0x1c5c5c5c5c5c5c5c!2s${origin}!5e0!3m2!1spt-BR!2sbr!4v1234567890123&origin=${origin}&destination=${destination}&mode=driving`;
+    if (!selectedDestination) {
+      return 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.5!2d-49.2334!3d-25.4284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce472f8c9d1c1%3A0x9c9c9c9c9c9c9c9c!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%2C%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890';
+    }
+
+    const destination = distances.find(d => d.place === selectedDestination);
+    if (!destination) {
+      return '';
+    }
+
+    const apartmentAddress = 'Av. Prefeito Maurício Fruet, 1270, Jardim Botânico, Curitiba';
+    const destinationAddress = destination.address;
+
+    return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.5!2d-49.2334!3d-25.4284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce472f8c9d1c1%3A0x9c9c9c9c9c9c9c9c!2s${encodeURIComponent(
+      apartmentAddress
+    )}!5e0!3m2!1spt-BR!2sbr!4v1234567890&origin=${encodeURIComponent(
+      apartmentAddress
+    )}&destination=${encodeURIComponent(destinationAddress)}&mode=driving`;
   };
 
+  useEffect(() => {
+    distances.forEach(item => {
+      getRouteInfo(item.address, item.place);
+    });
+  }, []);
+
   return (
-    <section className="py-12 md:py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Distâncias e Direções
+        <div className="max-w-6xl mx-auto">
+          {/* Título */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              📍 Localização Estratégica
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              Rotas em tempo real do apartamento para os principais pontos turísticos de Curitiba
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Localizado no coração do Jardim Botânico, este apartamento oferece acesso privilegiado
+              aos principais pontos turísticos e serviços de Curitiba.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Mapa Interativo */}
-            <div className="lg:col-span-2">
-              <div className="bg-white p-4 rounded-xl shadow-soft">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                    🗺️ Rota para {selectedDestination}
-                  </h3>
-                  <div className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
-                    {routeInfo[selectedDestination]?.distance} • {routeInfo[selectedDestination]?.duration}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                  🗺️ Mapa Interativo
+                </h3>
+                <div className="bg-white p-4 rounded-xl shadow-soft">
+                  <div className="aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      src={getSelectedMapUrl()}
+                      width="100%"
+                      height="100%"
+                      style={{border: 0}}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Localização do Apartamento"
+                    />
                   </div>
                 </div>
-                
-                <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
-                  <iframe
-                    src={getSelectedMapUrl()}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`Rota para ${selectedDestination}`}
-                  ></iframe>
-                </div>
-                
-                {/* Controles do Mapa */}
-                <div className="mt-4 flex flex-wrap gap-2">
+              </div>
+
+              {/* Botões de Destino */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                  🎯 Selecione um Destino
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {distances.map((item, index) => (
                     <button
                       key={index}
                       onClick={() => handleDestinationClick(item.place)}
-                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={`p-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedDestination === item.place
-                          ? 'bg-green-600 text-white shadow-lg'
+                          ? 'bg-green-600 text-white shadow-md'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                     >
@@ -217,11 +213,11 @@ export default function Location () {
                 {distances.map((item, index) => {
                   const route = routeInfo[item.place];
                   return (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300 cursor-pointer ${
-                        selectedDestination === item.place 
-                          ? 'bg-green-50 border-2 border-green-200' 
+                        selectedDestination === item.place
+                          ? 'bg-green-50 border-2 border-green-200'
                           : 'bg-white'
                       }`}
                       onClick={() => handleDestinationClick(item.place)}
@@ -229,11 +225,17 @@ export default function Location () {
                       <div className="flex items-center justify-center gap-3">
                         <span className="text-2xl">{item.icon}</span>
                         <div className="text-center flex-1">
-                          <h4 className="font-semibold text-gray-900 hover:text-gray-900">{item.place}</h4>
+                          <h4 className="font-semibold text-gray-900 hover:text-gray-900">
+                            {item.place}
+                          </h4>
                           {route ? (
                             <>
-                              <p className="text-sm text-gray-600 hover:text-gray-600">{route.distance}</p>
-                              <p className="text-sm text-green-700 font-semibold hover:text-green-700">{route.duration}</p>
+                              <p className="text-sm text-gray-600 hover:text-gray-600">
+                                {route.distance}
+                              </p>
+                              <p className="text-sm text-green-700 font-semibold hover:text-green-700">
+                                {route.duration}
+                              </p>
                             </>
                           ) : (
                             <div className="flex items-center justify-center gap-2">
@@ -265,8 +267,12 @@ export default function Location () {
                   <div className="flex flex-col items-center text-center gap-3">
                     <span className="text-2xl">{item.icon}</span>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-gray-900">{item.title}</h4>
-                      <p className="text-sm text-gray-600 hover:text-gray-600">{item.description}</p>
+                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 hover:text-gray-600">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -281,8 +287,9 @@ export default function Location () {
                 🏆 Localização Estratégica
               </h3>
               <p className="text-green-100 mb-4">
-                Localizado no coração do Jardim Botânico, você tem acesso rápido a todos os principais pontos turísticos de Curitiba,
-                combinando tranquilidade residencial com facilidade de locomoção.
+                Localizado no coração do Jardim Botânico, você tem acesso rápido a todos os principais
+                pontos turísticos de Curitiba, combinando tranquilidade residencial com facilidade de
+                locomoção.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <span className="bg-white/20 px-3 py-1 rounded-full">Centro Turístico</span>

@@ -1,0 +1,18 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "max-len": "off",
+    "camelcase": "off",
+    "new-cap": "off",
+    "space-before-function-paren": "off",
+    "object-curly-spacing": "off",
+    "no-trailing-spaces": "off",
+    "eol-last": "off",
+    "curly": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-console": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "react-refresh/only-export-components": "warn"
+  }
+} 
