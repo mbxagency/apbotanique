@@ -4,7 +4,7 @@
 export const ANIMATION_CONFIG = {
   duration: 0.6,
   ease: [0.25, 0.46, 0.45, 0.94],
-  stagger: 0.1,
+  stagger: 0.1
 } as const;
 
 // Breakpoints responsivos
@@ -16,7 +16,7 @@ export const BREAKPOINTS = {
   xl: 1280,
   '2xl': 1536,
   '3xl': 1600,
-  '4xl': 1920,
+  '4xl': 1920
 } as const;
 
 // Configurações de imagens
@@ -28,8 +28,8 @@ export const IMAGE_CONFIG = {
     small: 300,
     medium: 600,
     large: 1200,
-    xlarge: 1920,
-  },
+    xlarge: 1920
+  }
 } as const;
 
 // Configurações de SEO
@@ -41,13 +41,13 @@ export const SEO_CONFIG = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    site_name: 'Botanique - Arau Imóveis',
+    site_name: 'Botanique - Arau Imóveis'
   },
   twitter: {
     handle: '@arauimoveis',
     site: '@arauimoveis',
-    cardType: 'summary_large_image',
-  },
+    cardType: 'summary_large_image'
+  }
 } as const;
 
 // Configurações de formulário
@@ -55,42 +55,42 @@ export const FORM_CONFIG = {
   validation: {
     email: {
       required: 'Email é obrigatório',
-      invalid: 'Email inválido',
+      invalid: 'Email inválido'
     },
     phone: {
       required: 'Telefone é obrigatório',
-      invalid: 'Telefone inválido',
+      invalid: 'Telefone inválido'
     },
     name: {
       required: 'Nome é obrigatório',
-      minLength: 'Nome deve ter pelo menos 2 caracteres',
+      minLength: 'Nome deve ter pelo menos 2 caracteres'
     },
     message: {
       required: 'Mensagem é obrigatória',
-      minLength: 'Mensagem deve ter pelo menos 10 caracteres',
-    },
+      minLength: 'Mensagem deve ter pelo menos 10 caracteres'
+    }
   },
   submit: {
     success: 'Mensagem enviada com sucesso!',
     error: 'Erro ao enviar mensagem. Tente novamente.',
-    loading: 'Enviando...',
-  },
+    loading: 'Enviando...'
+  }
 } as const;
 
 // Configurações de navegação
 export const NAVIGATION = {
   main: [
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Diferenciais', href: '#diferenciais' },
-    { label: 'Galeria', href: '#galeria' },
-    { label: 'Localização', href: '#localizacao' },
-    { label: 'Contato', href: '#contato' },
+    {label: 'Sobre', href: '#sobre'},
+    {label: 'Diferenciais', href: '#diferenciais'},
+    {label: 'Galeria', href: '#galeria'},
+    {label: 'Localização', href: '#localizacao'},
+    {label: 'Contato', href: '#contato'}
   ],
   footer: [
-    { label: 'Política de Privacidade', href: '/privacidade' },
-    { label: 'Termos de Uso', href: '/termos' },
-    { label: 'Cookies', href: '/cookies' },
-  ],
+    {label: 'Política de Privacidade', href: '/privacidade'},
+    {label: 'Termos de Uso', href: '/termos'},
+    {label: 'Cookies', href: '/cookies'}
+  ]
 } as const;
 
 // Configurações de contato
@@ -105,13 +105,13 @@ export const CONTACT_CONFIG = {
     city: 'Curitiba',
     state: 'PR',
     zipCode: '80210-090',
-    country: 'Brasil',
+    country: 'Brasil'
   },
   social: {
     instagram: 'https://instagram.com/arauimoveis',
     facebook: 'https://facebook.com/arauimoveis',
-    whatsapp: 'https://wa.me/5541991328657',
-  },
+    whatsapp: 'https://wa.me/5541991328657'
+  }
 } as const;
 
 // Configurações do imóvel
@@ -132,7 +132,7 @@ export const PROPERTY_CONFIG = {
     '2 vagas de garagem',
     'Portaria 24h',
     'Segurança',
-    'Área de lazer',
+    'Área de lazer'
   ],
   highlights: [
     'Localização privilegiada',
@@ -140,8 +140,8 @@ export const PROPERTY_CONFIG = {
     'Fácil acesso ao centro',
     'Comércio próximo',
     'Transporte público',
-    'Área nobre de Curitiba',
-  ],
+    'Área nobre de Curitiba'
+  ]
 } as const;
 
 // Configurações de performance
@@ -150,42 +150,42 @@ export const PERFORMANCE_CONFIG = {
     lazyLoading: true,
     preload: true,
     placeholder: 'blur',
-    blurDataURL: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=',
+    blurDataURL: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
   },
   fonts: {
     preload: true,
-    display: 'swap',
+    display: 'swap'
   },
   analytics: {
     enabled: true,
-    trackingId: 'G-XXXXXXXXXX',
-  },
+    trackingId: 'G-XXXXXXXXXX'
+  }
 } as const;
 
 // Configurações de acessibilidade
 export const ACCESSIBILITY_CONFIG = {
   skipLinks: [
-    { label: 'Ir para o conteúdo', href: '#main-content' },
-    { label: 'Ir para o menu', href: '#main-navigation' },
-    { label: 'Ir para o rodapé', href: '#footer' },
+    {label: 'Ir para o conteúdo', href: '#main-content'},
+    {label: 'Ir para o menu', href: '#main-navigation'},
+    {label: 'Ir para o rodapé', href: '#footer'}
   ],
   aria: {
     navigation: 'Navegação principal',
     main: 'Conteúdo principal',
-    footer: 'Rodapé',
-  },
+    footer: 'Rodapé'
+  }
 } as const;
 
 // Configurações de cache
 export const CACHE_CONFIG = {
   static: {
     maxAge: 31536000, // 1 ano
-    staleWhileRevalidate: 86400, // 1 dia
+    staleWhileRevalidate: 86400 // 1 dia
   },
   dynamic: {
     maxAge: 3600, // 1 hora
-    staleWhileRevalidate: 60, // 1 minuto
-  },
+    staleWhileRevalidate: 60 // 1 minuto
+  }
 } as const;
 
 // Configurações de segurança
@@ -194,13 +194,13 @@ export const SECURITY_CONFIG = {
     'X-Frame-Options': 'DENY',
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'origin-when-cross-origin',
-    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
   },
   csp: {
     'default-src': ["'self'"],
     'script-src': ["'self'", "'unsafe-inline'"],
     'style-src': ["'self'", "'unsafe-inline'"],
     'img-src': ["'self'", 'data:', 'https:'],
-    'font-src': ["'self'", 'https:'],
-  },
-} as const; 
+    'font-src': ["'self'", 'https:']
+  }
+} as const;

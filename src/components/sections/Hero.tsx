@@ -9,13 +9,13 @@ interface HeroProps {
 
 export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   const slides = [
-    { src: '/images/sala/sala1.jpg', alt: 'Apartamento Botanique - Sala de estar' },
-    { src: '/images/cozinha/cozinha1.jpg', alt: 'Apartamento Botanique - Cozinha americana' },
-    { src: '/images/quartos/quarto1.jpg', alt: 'Apartamento Botanique - Quarto principal' },
-    { src: '/images/sacada/sacada1.jpg', alt: 'Apartamento Botanique - Sacada' },
-    { src: '/images/fachada/vista.jpg', alt: 'Apartamento Botanique - Vista' }
+    {src: '/images/sala/sala1.jpg', alt: 'Apartamento Botanique - Sala de estar'},
+    {src: '/images/cozinha/cozinha1.jpg', alt: 'Apartamento Botanique - Cozinha americana'},
+    {src: '/images/quartos/quarto1.jpg', alt: 'Apartamento Botanique - Quarto principal'},
+    {src: '/images/sacada/sacada1.jpg', alt: 'Apartamento Botanique - Sacada'},
+    {src: '/images/fachada/vista.jpg', alt: 'Apartamento Botanique - Vista'}
   ];
 
   useEffect(() => {
@@ -28,19 +28,19 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
   const changeSlide = (direction: number) => {
     setCurrentSlide((prev) => {
       const newSlide = prev + direction;
-      if (newSlide < 0) return slides.length - 1;
-      if (newSlide >= slides.length) return 0;
+      if (newSlide < 0) { return slides.length - 1; }
+      if (newSlide >= slides.length) { return 0; }
       return newSlide;
     });
   };
 
   const handleWhatsAppClick = () => {
     const phone = '5541991328657';
-    const message = encodeURIComponent(`Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179`);
-    
+    const message = encodeURIComponent('Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179');
+
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, '_blank');
-    
+
     if (onWhatsAppClick) {
       onWhatsAppClick();
     }
@@ -48,7 +48,7 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
 
   const handlePhoneClick = () => {
     window.location.href = 'tel:+5541991328657';
-    
+
     if (onPhoneClick) {
       onPhoneClick();
     }
@@ -82,7 +82,7 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
         >
           <span className="text-gray-700">‹</span>
         </button>
-        
+
         <div className="flex gap-2">
           {slides.map((_, index) => (
             <button
@@ -94,7 +94,7 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
             />
           ))}
         </div>
-        
+
         <button
           onClick={() => changeSlide(1)}
           className="bg-white/90 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -115,7 +115,7 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
           <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 opacity-90">
             Jardim Botânico • Curitiba
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <button
               onClick={handleWhatsAppClick}
@@ -124,7 +124,7 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
               <span className="text-xl md:text-2xl">💬</span>
               <span>Falar no WhatsApp</span>
             </button>
-            
+
             <button
               onClick={handlePhoneClick}
               className="bg-white/20 hover:bg-white/30 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 border-2 border-white/30 hover:border-white/50 flex items-center justify-center gap-2 md:gap-3 backdrop-blur-sm"
@@ -137,4 +137,4 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
       </div>
     </section>
   );
-} 
+}

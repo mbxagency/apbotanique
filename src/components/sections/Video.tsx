@@ -7,7 +7,7 @@ export default function Video () {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -22,7 +22,7 @@ export default function Video () {
           {/* Video Container */}
           <div className="relative">
             <div className="bg-black rounded-3xl overflow-hidden shadow-2xl">
-              <video 
+              <video
                 className="w-full h-auto"
                 controls
                 poster="/images/others/nova.avif"
@@ -32,7 +32,7 @@ export default function Video () {
                 Seu navegador não suporta vídeos.
               </video>
             </div>
-            
+
             {/* Play Button Overlay */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-auto">
@@ -56,7 +56,7 @@ export default function Video () {
                 </p>
               </div>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                 <div className="text-4xl mb-4">🌿</div>
@@ -66,7 +66,7 @@ export default function Video () {
                 </p>
               </div>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                 <div className="text-4xl mb-4">📍</div>
@@ -92,4 +92,4 @@ export default function Video () {
       </div>
     </section>
   );
-} 
+}

@@ -36,7 +36,7 @@ export interface PropertyImage {
   height: number;
 }
 
-export type ImageCategory = 
+export type ImageCategory =
   | 'fachada'
   | 'sala'
   | 'suite'
@@ -166,4 +166,4 @@ export interface NavigationItem {
 export interface NavigationProps {
   items: NavigationItem[];
   className?: string;
-} 
+}

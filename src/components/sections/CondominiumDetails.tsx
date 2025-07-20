@@ -97,7 +97,7 @@ export default function CondominiumDetails () {
           <div className="mt-12 bg-gradient-to-r from-green-500 to-green-600 p-8 rounded-2xl text-white text-center">
             <h3 className="text-2xl font-bold mb-4">🏆 Condomínio Excepcional</h3>
             <p className="text-lg mb-4">
-              Com apenas R$ 254,10 de taxa fixa mensal, este é um dos condomínios mais acessíveis 
+              Com apenas R$ 254,10 de taxa fixa mensal, este é um dos condomínios mais acessíveis
               de Curitiba, oferecendo excelente custo-benefício em uma das melhores localizações da cidade.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -111,4 +111,4 @@ export default function CondominiumDetails () {
       </div>
     </section>
   );
-} 
+}

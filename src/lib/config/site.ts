@@ -4,7 +4,7 @@ export const siteConfig = {
   name: 'Botanique',
   description: 'Apartamento semi mobiliado no Jardim Botânico, Curitiba',
   url: 'https://botanique.arauimoveis.com.br',
-  
+
   // Informações do imóvel
   property: {
     type: 'Apartamento Semi Mobiliado',
@@ -64,4 +64,4 @@ export const siteConfig = {
   }
 } as const;
 
-export type SiteConfig = typeof siteConfig; 
+export type SiteConfig = typeof siteConfig;

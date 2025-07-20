@@ -8,7 +8,7 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
   display: 'swap',
-  preload: true,
+  preload: true
 });
 
 const playfairDisplay = Playfair_Display({
@@ -16,7 +16,7 @@ const playfairDisplay = Playfair_Display({
   weight: ['400', '500', '600', '700'],
   variable: '--font-playfair',
   display: 'swap',
-  preload: true,
+  preload: true
 });
 
 const montserrat = Montserrat({
@@ -24,21 +24,21 @@ const montserrat = Montserrat({
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-montserrat',
   display: 'swap',
-  preload: true,
+  preload: true
 });
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  preload: true,
+  preload: true
 });
 
 // Metadados profissionais
 export const metadata: Metadata = {
   title: {
     default: 'Botanique - Apartamento no Jardim Botânico | Arau Imóveis',
-    template: '%s | Botanique - Arau Imóveis',
+    template: '%s | Botanique - Arau Imóveis'
   },
   description: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba. 2 quartos (1 suíte), 2 vagas, academia, áreas comuns. R$ 729.000,00',
   keywords: [
@@ -51,19 +51,19 @@ export const metadata: Metadata = {
     '2 quartos',
     'suíte',
     'academia',
-    'áreas comuns',
+    'áreas comuns'
   ],
-  authors: [{ name: 'Arau Imóveis' }],
+  authors: [{name: 'Arau Imóveis'}],
   creator: 'Arau Imóveis',
   publisher: 'Arau Imóveis',
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
+    telephone: false
   },
   metadataBase: new URL('https://botanique.arauimoveis.com.br'),
   alternates: {
-    canonical: '/',
+    canonical: '/'
   },
   openGraph: {
     type: 'website',
@@ -77,15 +77,15 @@ export const metadata: Metadata = {
         url: '/images/fachada/fachada1.jpg',
         width: 1200,
         height: 630,
-        alt: 'Fachada do apartamento Botanique',
-      },
-    ],
+        alt: 'Fachada do apartamento Botanique'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Botanique - Apartamento no Jardim Botânico | Arau Imóveis',
     description: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba.',
-    images: ['/images/fachada/fachada1.jpg'],
+    images: ['/images/fachada/fachada1.jpg']
   },
   robots: {
     index: true,
@@ -95,24 +95,24 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+      'max-snippet': -1
+    }
   },
   verification: {
-    google: 'google-site-verification-code',
-  },
+    google: 'google-site-verification-code'
+  }
 };
 
 // Viewport otimizado
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#16a34a' },
-    { media: '(prefers-color-scheme: dark)', color: '#15803d' },
+    {media: '(prefers-color-scheme: light)', color: '#16a34a'},
+    {media: '(prefers-color-scheme: dark)', color: '#15803d'}
   ],
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  userScalable: true,
+  userScalable: true
 };
 
 // Structured Data para imóveis
@@ -123,7 +123,7 @@ const structuredData = {
   description: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba',
   brand: {
     '@type': 'Brand',
-    name: 'Arau Imóveis',
+    name: 'Arau Imóveis'
   },
   offers: {
     '@type': 'Offer',
@@ -134,8 +134,8 @@ const structuredData = {
       '@type': 'RealEstateAgent',
       name: 'Arau Imóveis',
       telephone: '+5541991490708',
-      email: 'contato@arauimoveis.com.br',
-    },
+      email: 'contato@arauimoveis.com.br'
+    }
   },
   address: {
     '@type': 'PostalAddress',
@@ -143,29 +143,29 @@ const structuredData = {
     addressLocality: 'Curitiba',
     addressRegion: 'PR',
     postalCode: '80210-090',
-    addressCountry: 'BR',
+    addressCountry: 'BR'
   },
   additionalProperty: [
     {
       '@type': 'PropertyValue',
       name: 'Área',
-      value: '80m²',
+      value: '80m²'
     },
     {
       '@type': 'PropertyValue',
       name: 'Quartos',
-      value: '2',
+      value: '2'
     },
     {
       '@type': 'PropertyValue',
       name: 'Vagas',
-      value: '2',
-    },
-  ],
+      value: '2'
+    }
+  ]
 };
 
 export default function RootLayout ({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

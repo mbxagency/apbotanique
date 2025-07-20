@@ -7,11 +7,11 @@ interface FloatingWhatsAppProps {
 export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
   const handleClick = () => {
     const phone = '5541991328657';
-    const message = encodeURIComponent(`Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179`);
-    
+    const message = encodeURIComponent('Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179');
+
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, '_blank');
-    
+
     if (onClick) {
       onClick();
     }
@@ -28,7 +28,7 @@ export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
           💬
         </span>
       </button>
-      
+
       {/* Tooltip */}
       <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
         Falar no WhatsApp
@@ -36,4 +36,4 @@ export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
       </div>
     </div>
   );
-} 
+}

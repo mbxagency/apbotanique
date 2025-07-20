@@ -8,11 +8,11 @@ interface ContactProps {
 export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) {
   const handleWhatsAppClick = () => {
     const phone = '5541991328657';
-    const message = encodeURIComponent(`Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179`);
-    
+    const message = encodeURIComponent('Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179');
+
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, '_blank');
-    
+
     if (onWhatsAppClick) {
       onWhatsAppClick();
     }
@@ -20,7 +20,7 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
 
   const handlePhoneClick = () => {
     window.location.href = 'tel:+5541991328657';
-    
+
     if (onPhoneClick) {
       onPhoneClick();
     }
@@ -32,15 +32,15 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 font-display">Entre em Contato</h2>
-            
+
             {/* Informações do Corretor */}
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 mb-8">
               <div className="flex flex-col lg:flex-row items-center gap-6">
                 <div className="flex-shrink-0">
                   <div className="bg-white/20 w-24 h-24 rounded-full flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="/images/others/nova.avif" 
-                      alt="Arau Imóveis" 
+                    <img
+                      src="/images/others/nova.avif"
+                      alt="Arau Imóveis"
                       className="w-20 h-20 object-contain"
                     />
                   </div>
@@ -62,14 +62,14 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
 
             {/* Botões de Contato */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <button 
+              <button
                 onClick={handleWhatsAppClick}
                 className="bg-green-600 hover:bg-green-700 text-white p-6 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg"
               >
                 <span className="text-2xl">💬</span>
                 <span>WhatsApp</span>
               </button>
-              <button 
+              <button
                 onClick={handlePhoneClick}
                 className="bg-white text-green-800 p-6 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg"
               >
@@ -100,4 +100,4 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
       </div>
     </section>
   );
-} 
+}

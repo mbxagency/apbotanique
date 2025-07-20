@@ -53,13 +53,13 @@ export default function AdminPage () {
     topPages: [] as string[]
   });
 
-  const { getAnalyticsData, clearAnalyticsData } = useAnalytics();
+  const {getAnalyticsData, clearAnalyticsData} = useAnalytics();
 
   // Load real analytics data
   useEffect(() => {
     const loadAnalyticsData = () => {
       const data = getAnalyticsData();
-      
+
       // Convert analytics data to the format expected by the admin interface
       const visits: VisitData[] = data.visits.map(visit => ({
         id: visit.id,
@@ -143,7 +143,7 @@ export default function AdminPage () {
       exportDate: new Date().toISOString()
     };
 
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -170,7 +170,7 @@ export default function AdminPage () {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <button 
+              <button
                 onClick={handleClearData}
                 className="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-lg transition-colors"
               >
@@ -196,10 +196,10 @@ export default function AdminPage () {
           <div className="border-b border-gray-200">
             <nav className="flex space-x-8 px-6">
               {[
-                { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
-                { id: 'visits', label: 'Visitas', icon: Eye },
-                { id: 'contacts', label: 'Contatos', icon: Users },
-                { id: 'analytics', label: 'Analytics', icon: TrendingUp }
+                {id: 'dashboard', label: 'Dashboard', icon: BarChart3},
+                {id: 'visits', label: 'Visitas', icon: Eye},
+                {id: 'contacts', label: 'Contatos', icon: Users},
+                {id: 'analytics', label: 'Analytics', icon: TrendingUp}
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -289,9 +289,9 @@ export default function AdminPage () {
                       <span className="text-gray-600">{page}</span>
                       <div className="flex items-center">
                         <div className="w-32 bg-gray-200 rounded-full h-2 mr-3">
-                          <div 
-                            className="bg-green-500 h-2 rounded-full" 
-                            style={{ width: `${80 - index * 20}%` }}
+                          <div
+                            className="bg-green-500 h-2 rounded-full"
+                            style={{width: `${80 - index * 20}%`}}
                           ></div>
                         </div>
                         <span className="text-sm text-gray-500">{80 - index * 20}%</span>
@@ -317,7 +317,7 @@ export default function AdminPage () {
                   <button className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition-colors">
                     <Filter className="w-4 h-4" />
                   </button>
-                  <button 
+                  <button
                     onClick={handleExportData}
                     className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
                   >
@@ -485,4 +485,4 @@ export default function AdminPage () {
       </div>
     </div>
   );
-} 
+}

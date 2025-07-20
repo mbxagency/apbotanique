@@ -2,15 +2,15 @@
 
 export default function QuickInfo () {
   const infoItems = [
-    { icon: '📏', value: '~80m²', label: 'Área Privativa' },
-    { icon: '🏠', value: '113m²', label: 'Área Total' },
-    { icon: '🛏️', value: '2', label: 'Quartos' },
-    { icon: '🛁', value: '1', label: 'Suíte' },
-    { icon: '🚗', value: '2', label: 'Vagas' },
-    { icon: '🚿', value: '2', label: 'Banheiros' },
-    { icon: '🍽️', value: 'Área Gourmet', label: 'Sacada ampla' },
-    { icon: '📄', value: 'R$ 1.050', label: 'IPTU Anual' },
-    { icon: '🏢', value: '2020', label: 'Primeiro Morador' }
+    {icon: '📏', value: '~80m²', label: 'Área Privativa'},
+    {icon: '🏠', value: '113m²', label: 'Área Total'},
+    {icon: '🛏️', value: '2', label: 'Quartos'},
+    {icon: '🛁', value: '1', label: 'Suíte'},
+    {icon: '🚗', value: '2', label: 'Vagas'},
+    {icon: '🚿', value: '2', label: 'Banheiros'},
+    {icon: '🍽️', value: 'Área Gourmet', label: 'Sacada ampla'},
+    {icon: '📄', value: 'R$ 1.050', label: 'IPTU Anual'},
+    {icon: '🏢', value: '2020', label: 'Primeiro Morador'}
   ];
 
   return (
@@ -37,4 +37,4 @@ export default function QuickInfo () {
       </div>
     </section>
   );
-} 
+}

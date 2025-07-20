@@ -36,59 +36,59 @@ class AnalyticsTracker {
   private startTime: number;
   private storageKey = 'botanique_analytics';
 
-  constructor() {
+  constructor () {
     this.sessionId = this.generateSessionId();
     this.startTime = Date.now();
     this.initializeTracking();
   }
 
-  private generateSessionId(): string {
+  private generateSessionId (): string {
     return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
   }
 
-  private getDeviceType(): 'desktop' | 'mobile' | 'tablet' {
+  private getDeviceType (): 'desktop' | 'mobile' | 'tablet' {
     const userAgent = navigator.userAgent.toLowerCase();
-    if (/tablet|ipad|playbook|silk/i.test(userAgent)) {
+    if ((/tablet|ipad|playbook|silk/i).test(userAgent)) {
       return 'tablet';
     }
-    if (/mobile|android|iphone|ipod|blackberry|opera mini|iemobile/i.test(userAgent)) {
+    if ((/mobile|android|iphone|ipod|blackberry|opera mini|iemobile/i).test(userAgent)) {
       return 'mobile';
     }
     return 'desktop';
   }
 
-  private getBrowser(): string {
+  private getBrowser (): string {
     const userAgent = navigator.userAgent;
-    if (userAgent.includes('Chrome')) return 'Chrome';
-    if (userAgent.includes('Firefox')) return 'Firefox';
-    if (userAgent.includes('Safari')) return 'Safari';
-    if (userAgent.includes('Edge')) return 'Edge';
-    if (userAgent.includes('Opera')) return 'Opera';
+    if (userAgent.includes('Chrome')) { return 'Chrome'; }
+    if (userAgent.includes('Firefox')) { return 'Firefox'; }
+    if (userAgent.includes('Safari')) { return 'Safari'; }
+    if (userAgent.includes('Edge')) { return 'Edge'; }
+    if (userAgent.includes('Opera')) { return 'Opera'; }
     return 'Unknown';
   }
 
-  private getOS(): string {
+  private getOS (): string {
     const userAgent = navigator.userAgent;
-    if (userAgent.includes('Windows')) return 'Windows';
-    if (userAgent.includes('Mac')) return 'macOS';
-    if (userAgent.includes('Linux')) return 'Linux';
-    if (userAgent.includes('Android')) return 'Android';
-    if (userAgent.includes('iOS')) return 'iOS';
+    if (userAgent.includes('Windows')) { return 'Windows'; }
+    if (userAgent.includes('Mac')) { return 'macOS'; }
+    if (userAgent.includes('Linux')) { return 'Linux'; }
+    if (userAgent.includes('Android')) { return 'Android'; }
+    if (userAgent.includes('iOS')) { return 'iOS'; }
     return 'Unknown';
   }
 
-  private getSource(): string {
+  private getSource (): string {
     const referrer = document.referrer;
-    if (!referrer) return 'Direct';
-    if (referrer.includes('google')) return 'Google';
-    if (referrer.includes('facebook')) return 'Facebook';
-    if (referrer.includes('instagram')) return 'Instagram';
-    if (referrer.includes('whatsapp')) return 'WhatsApp';
-    if (referrer.includes('youtube')) return 'YouTube';
+    if (!referrer) { return 'Direct'; }
+    if (referrer.includes('google')) { return 'Google'; }
+    if (referrer.includes('facebook')) { return 'Facebook'; }
+    if (referrer.includes('instagram')) { return 'Instagram'; }
+    if (referrer.includes('whatsapp')) { return 'WhatsApp'; }
+    if (referrer.includes('youtube')) { return 'YouTube'; }
     return 'Other';
   }
 
-  private async getIPAddress(): Promise<string> {
+  private async getIPAddress (): Promise<string> {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
       const data = await response.json();
@@ -98,18 +98,18 @@ class AnalyticsTracker {
     }
   }
 
-  private formatDate(timestamp: number): { date: string; time: string } {
+  private formatDate (timestamp: number): { date: string; time: string } {
     const date = new Date(timestamp);
     const dateStr = date.toISOString().split('T')[0];
     const timeStr = date.toTimeString().split(' ')[0];
-    
+
     return {
       date: dateStr || '',
       time: timeStr || ''
     };
   }
 
-  private initializeTracking(): void {
+  private initializeTracking (): void {
     // Track page load
     this.trackPageView();
 
@@ -148,10 +148,10 @@ class AnalyticsTracker {
     }
   }
 
-  public async trackPageView(): Promise<void> {
+  public async trackPageView (): Promise<void> {
     const now = Date.now();
     const duration = now - this.startTime;
-    
+
     const visitData: VisitData = {
       id: 'visit_' + now + '_' + Math.random().toString(36).substr(2, 9),
       timestamp: now,
@@ -172,10 +172,10 @@ class AnalyticsTracker {
     this.startTime = now;
   }
 
-  public trackPageLeave(): void {
+  public trackPageLeave (): void {
     const now = Date.now();
     const duration = now - this.startTime;
-    
+
     // Update the last visit with final duration
     const visits = this.getStoredVisits();
     if (visits.length > 0) {
@@ -187,11 +187,11 @@ class AnalyticsTracker {
     }
   }
 
-  public trackPageReturn(): void {
+  public trackPageReturn (): void {
     this.startTime = Date.now();
   }
 
-  public trackContact(contactData: Omit<ContactData, 'id' | 'timestamp' | 'sessionId'>): void {
+  public trackContact (contactData: Omit<ContactData, 'id' | 'timestamp' | 'sessionId'>): void {
     const contact: ContactData = {
       ...contactData,
       id: 'contact_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
@@ -202,7 +202,7 @@ class AnalyticsTracker {
     this.saveContactData(contact);
   }
 
-  public trackEvent(eventName: string, eventData?: Record<string, any>): void {
+  public trackEvent (eventName: string, eventData?: Record<string, any>): void {
     const event = {
       id: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
       timestamp: Date.now(),
@@ -215,44 +215,44 @@ class AnalyticsTracker {
     this.saveEventData(event);
   }
 
-  private saveVisitData(visitData: VisitData): void {
+  private saveVisitData (visitData: VisitData): void {
     const visits = this.getStoredVisits();
     visits.push(visitData);
-    
+
     // Keep only last 1000 visits to prevent storage overflow
     if (visits.length > 1000) {
       visits.splice(0, visits.length - 1000);
     }
-    
+
     this.saveVisitsToStorage(visits);
   }
 
-  private saveContactData(contactData: ContactData): void {
+  private saveContactData (contactData: ContactData): void {
     const contacts = this.getStoredContacts();
     contacts.push(contactData);
-    
+
     // Keep only last 500 contacts
     if (contacts.length > 500) {
       contacts.splice(0, contacts.length - 500);
     }
-    
+
     this.saveContactsToStorage(contacts);
   }
 
-  private saveEventData(eventData: any): void {
+  private saveEventData (eventData: any): void {
     const events = this.getStoredEvents();
     events.push(eventData);
-    
+
     // Keep only last 1000 events
     if (events.length > 1000) {
       events.splice(0, events.length - 1000);
     }
-    
+
     this.saveEventsToStorage(events);
   }
 
-  private getStoredVisits(): VisitData[] {
-    if (typeof window === 'undefined') return [];
+  private getStoredVisits (): VisitData[] {
+    if (typeof window === 'undefined') { return []; }
     try {
       const stored = localStorage.getItem(`${this.storageKey}_visits`);
       return stored ? JSON.parse(stored) : [];
@@ -261,8 +261,8 @@ class AnalyticsTracker {
     }
   }
 
-  private getStoredContacts(): ContactData[] {
-    if (typeof window === 'undefined') return [];
+  private getStoredContacts (): ContactData[] {
+    if (typeof window === 'undefined') { return []; }
     try {
       const stored = localStorage.getItem(`${this.storageKey}_contacts`);
       return stored ? JSON.parse(stored) : [];
@@ -271,8 +271,8 @@ class AnalyticsTracker {
     }
   }
 
-  private getStoredEvents(): any[] {
-    if (typeof window === 'undefined') return [];
+  private getStoredEvents (): any[] {
+    if (typeof window === 'undefined') { return []; }
     try {
       const stored = localStorage.getItem(`${this.storageKey}_events`);
       return stored ? JSON.parse(stored) : [];
@@ -281,8 +281,8 @@ class AnalyticsTracker {
     }
   }
 
-  private saveVisitsToStorage(visits: VisitData[]): void {
-    if (typeof window === 'undefined') return;
+  private saveVisitsToStorage (visits: VisitData[]): void {
+    if (typeof window === 'undefined') { return; }
     try {
       localStorage.setItem(`${this.storageKey}_visits`, JSON.stringify(visits));
     } catch (error) {
@@ -290,8 +290,8 @@ class AnalyticsTracker {
     }
   }
 
-  private saveContactsToStorage(contacts: ContactData[]): void {
-    if (typeof window === 'undefined') return;
+  private saveContactsToStorage (contacts: ContactData[]): void {
+    if (typeof window === 'undefined') { return; }
     try {
       localStorage.setItem(`${this.storageKey}_contacts`, JSON.stringify(contacts));
     } catch (error) {
@@ -299,8 +299,8 @@ class AnalyticsTracker {
     }
   }
 
-  private saveEventsToStorage(events: any[]): void {
-    if (typeof window === 'undefined') return;
+  private saveEventsToStorage (events: any[]): void {
+    if (typeof window === 'undefined') { return; }
     try {
       localStorage.setItem(`${this.storageKey}_events`, JSON.stringify(events));
     } catch (error) {
@@ -309,28 +309,28 @@ class AnalyticsTracker {
   }
 
   // Public methods to get analytics data
-  public getVisits(): VisitData[] {
+  public getVisits (): VisitData[] {
     return this.getStoredVisits();
   }
 
-  public getContacts(): ContactData[] {
+  public getContacts (): ContactData[] {
     return this.getStoredContacts();
   }
 
-  public getEvents(): any[] {
+  public getEvents (): any[] {
     return this.getStoredEvents();
   }
 
-  public getStats() {
+  public getStats () {
     const visits = this.getVisits();
     const contacts = this.getContacts();
-    
+
     const uniqueVisitors = new Set(visits.map(v => v.ip)).size;
     const totalVisits = visits.length;
     const totalContacts = contacts.length;
     const conversionRate = totalVisits > 0 ? (totalContacts / totalVisits) * 100 : 0;
-    const avgDuration = visits.length > 0 
-      ? visits.reduce((acc, v) => acc + v.duration, 0) / visits.length 
+    const avgDuration = visits.length > 0
+      ? visits.reduce((acc, v) => acc + v.duration, 0) / visits.length
       : 0;
 
     // Get top pages
@@ -340,7 +340,7 @@ class AnalyticsTracker {
     }, {} as Record<string, number>);
 
     const topPages = Object.entries(pageCounts)
-      .sort(([,a], [,b]) => b - a)
+      .sort(([, a], [, b]) => b - a)
       .slice(0, 5)
       .map(([page]) => page);
 
@@ -354,8 +354,8 @@ class AnalyticsTracker {
     };
   }
 
-  public clearData(): void {
-    if (typeof window === 'undefined') return;
+  public clearData (): void {
+    if (typeof window === 'undefined') { return; }
     localStorage.removeItem(`${this.storageKey}_visits`);
     localStorage.removeItem(`${this.storageKey}_contacts`);
     localStorage.removeItem(`${this.storageKey}_events`);
@@ -374,4 +374,4 @@ export const getTracker = (): AnalyticsTracker => {
 
 export const initAnalytics = (): AnalyticsTracker => {
   return getTracker();
-}; 
+};

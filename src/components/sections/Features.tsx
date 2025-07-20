@@ -5,7 +5,7 @@ export default function Features () {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Diferenciais e Infraestrutura
         </h2>
-        
+
         {/* Detalhes do condomínio */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h3 className="text-2xl font-semibold mb-6 text-gray-900">Detalhes do Condomínio</h3>
@@ -134,4 +134,4 @@ export default function Features () {
       </div>
     </section>
   );
-} 
+}

@@ -13,11 +13,11 @@ export default function UrgencyBanner () {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
+          return {...prev, seconds: prev.seconds - 1};
         } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+          return {...prev, minutes: prev.minutes - 1, seconds: 59};
         } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+          return {hours: prev.hours - 1, minutes: 59, seconds: 59};
         }
         return prev;
       });
@@ -34,7 +34,7 @@ export default function UrgencyBanner () {
           <span className="font-bold">PROMOÇÃO ESPECIAL</span>
           <span className="text-xl">🔥</span>
         </div>
-        
+
         <div className="flex items-center space-x-2">
           <span className="text-sm">Termina em:</span>
           <div className="flex space-x-1">
@@ -51,7 +51,7 @@ export default function UrgencyBanner () {
             </div>
           </div>
         </div>
-        
+
         <div className="flex items-center space-x-2">
           <span className="text-sm">Economia de R$ 50.000</span>
           <span className="text-xl">💰</span>
@@ -59,4 +59,4 @@ export default function UrgencyBanner () {
       </div>
     </div>
   );
-} 
+}

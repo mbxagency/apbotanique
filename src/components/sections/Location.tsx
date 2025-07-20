@@ -2,12 +2,12 @@
 
 export default function Location () {
   const distances = [
-    { icon: '🌳', place: 'Jardim Botânico', distance: '700m', time: '8 min a pé' },
-    { icon: '🏥', place: 'Hospital Erasto Gaertner', distance: '1,2km', time: '3 min de carro' },
-    { icon: '🛒', place: 'Shopping Palladium', distance: '2,5km', time: '5 min de carro' },
-    { icon: '🚌', place: 'Terminal do Portão', distance: '1,8km', time: '4 min de carro' },
-    { icon: '🏫', place: 'Universidade Positivo', distance: '1,5km', time: '4 min de carro' },
-    { icon: '🏪', place: 'Supermercado', distance: '500m', time: '6 min a pé' }
+    {icon: '🌳', place: 'Jardim Botânico', distance: '700m', time: '8 min a pé'},
+    {icon: '🏥', place: 'Hospital Erasto Gaertner', distance: '1,2km', time: '3 min de carro'},
+    {icon: '🛒', place: 'Shopping Palladium', distance: '2,5km', time: '5 min de carro'},
+    {icon: '🚌', place: 'Terminal do Portão', distance: '1,8km', time: '4 min de carro'},
+    {icon: '🏫', place: 'Universidade Positivo', distance: '1,5km', time: '4 min de carro'},
+    {icon: '🏪', place: 'Supermercado', distance: '500m', time: '6 min a pé'}
   ];
 
   const curiosities = [
@@ -42,7 +42,7 @@ export default function Location () {
               Localização Privilegiada
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              O Jardim Botânico é uma das regiões mais nobres de Curitiba, 
+              O Jardim Botânico é uma das regiões mais nobres de Curitiba,
               com excelente infraestrutura e qualidade de vida.
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function Location () {
                 🏆 Melhor Localização de Curitiba
               </h3>
               <p className="text-green-100 mb-4">
-                O Jardim Botânico é reconhecido como uma das melhores regiões para morar em Curitiba, 
+                O Jardim Botânico é reconhecido como uma das melhores regiões para morar em Curitiba,
                 combinando sofisticação, tranquilidade e praticidade.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -116,4 +116,4 @@ export default function Location () {
       </div>
     </section>
   );
-} 
+}

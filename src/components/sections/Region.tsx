@@ -14,8 +14,8 @@ export default function Region () {
               Um dos Bairros Mais Cobiçados de Curitiba
             </h3>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              O Jardim Botânico é reconhecido como um dos bairros mais sofisticados e desejados de Curitiba. 
-              Localizado na região sul da cidade, oferece uma qualidade de vida excepcional com excelente 
+              O Jardim Botânico é reconhecido como um dos bairros mais sofisticados e desejados de Curitiba.
+              Localizado na região sul da cidade, oferece uma qualidade de vida excepcional com excelente
               infraestrutura e proximidade com as principais atrações da capital paranaense.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function Region () {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.1234567890123!2d-49.23456789012345!3d-25.45678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce1234567890%3A0xabcdef1234567890!2sAv.%20Prefeito%20Maur%C3%ADcio%20Fruet%2C%201270%20-%20Jardim%20Bot%C3%A2nico%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1234567890123"
                   width="100%"
                   height="100%"
-                  style={{ border: 0 }}
+                  style={{border: 0}}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -118,4 +118,4 @@ export default function Region () {
       </div>
     </section>
   );
-} 
+}

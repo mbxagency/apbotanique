@@ -18,9 +18,9 @@ export default function FloorPlan () {
             {/* Imagem da Planta */}
             <div className="relative">
               <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <img 
-                  src="/images/others/planta.jpeg" 
-                  alt="Planta do apartamento Botanique" 
+                <img
+                  src="/images/others/planta.jpeg"
+                  alt="Planta do apartamento Botanique"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
@@ -38,7 +38,7 @@ export default function FloorPlan () {
                   <h3 className="text-2xl font-bold">Uma das Maiores Sacadas</h3>
                 </div>
                 <p className="text-green-100 text-lg">
-                  Destaque-se no segmento com uma das maiores sacadas de Curitiba, 
+                  Destaque-se no segmento com uma das maiores sacadas de Curitiba,
                   oferecendo espaço generoso para área gourmet e lazer ao ar livre.
                 </p>
               </div>
@@ -51,7 +51,7 @@ export default function FloorPlan () {
                     <h4 className="text-xl font-bold text-gray-900">Cozinha Americana</h4>
                   </div>
                   <p className="text-gray-600">
-                    Integrada à sala, proporciona fluidez e modernidade ao ambiente, 
+                    Integrada à sala, proporciona fluidez e modernidade ao ambiente,
                     ideal para receber amigos e família.
                   </p>
                 </div>
@@ -62,7 +62,7 @@ export default function FloorPlan () {
                     <h4 className="text-xl font-bold text-gray-900">Espaço Fluido</h4>
                   </div>
                   <p className="text-gray-600">
-                    Distribuição inteligente que conecta todos os ambientes, 
+                    Distribuição inteligente que conecta todos os ambientes,
                     criando sensação de amplitude e conforto.
                   </p>
                 </div>
@@ -131,4 +131,4 @@ export default function FloorPlan () {
       </div>
     </section>
   );
-} 
+}
