@@ -10,6 +10,8 @@ import Region from '@/components/sections/Region';
 import OptionalItems from '@/components/sections/OptionalItems';
 import FloorPlan from '@/components/sections/FloorPlan';
 import Video from '@/components/sections/Video';
+import RegionDevelopment from '@/components/sections/RegionDevelopment';
+import PropertyHighlights from '@/components/sections/PropertyHighlights';
 
 import Contact from '@/components/sections/Contact';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
@@ -52,11 +54,17 @@ export default function HomePage () {
       {/* Planta do Apartamento */}
       <FloorPlan />
 
+      {/* Destaques do Imóvel */}
+      <PropertyHighlights />
+
       {/* Localização */}
       <Location />
 
       {/* Região */}
       <Region />
+
+      {/* Desenvolvimento da Região */}
+      <RegionDevelopment />
 
       {/* Itens Opcionais */}
       <OptionalItems />

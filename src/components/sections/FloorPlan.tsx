@@ -9,14 +9,14 @@ export default function FloorPlan () {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
               Planta do Apartamento
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
               Conheça a distribuição inteligente dos 80m² que oferecem conforto e funcionalidade
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center space-y-12">
             {/* Imagem da Planta */}
-            <div className="relative">
+            <div className="relative max-w-2xl w-full">
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <img
                   src="/images/others/planta.jpeg"
@@ -24,20 +24,20 @@ export default function FloorPlan () {
                   className="w-full h-auto rounded-xl"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+              <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold font-heading">
                 80m²
               </div>
             </div>
 
             {/* Informações da Planta */}
-            <div className="space-y-8">
+            <div className="space-y-8 max-w-4xl w-full">
               {/* Destaque da Sacada */}
-              <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-2xl text-white">
-                <div className="flex items-center gap-3 mb-4">
+              <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-2xl text-white text-center">
+                <div className="flex flex-col items-center gap-3 mb-4">
                   <span className="text-3xl">🏆</span>
-                  <h3 className="text-2xl font-bold">Uma das Maiores Sacadas</h3>
+                  <h3 className="text-2xl font-bold font-heading">Uma das Maiores Sacadas</h3>
                 </div>
-                <p className="text-green-100 text-lg">
+                <p className="text-green-100 text-lg font-body">
                   Destaque-se no segmento com uma das maiores sacadas de Curitiba,
                   oferecendo espaço generoso para área gourmet e lazer ao ar livre.
                 </p>
@@ -45,23 +45,23 @@ export default function FloorPlan () {
 
               {/* Características Principais */}
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-2xl shadow-md">
-                  <div className="flex items-center gap-3 mb-4">
+                <div className="bg-white p-6 rounded-2xl shadow-md text-center">
+                  <div className="flex flex-col items-center gap-3 mb-4">
                     <span className="text-2xl">🍳</span>
-                    <h4 className="text-xl font-bold text-gray-900">Cozinha Americana</h4>
+                    <h4 className="text-xl font-bold text-gray-900 font-heading">Cozinha Americana</h4>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 font-body">
                     Integrada à sala, proporciona fluidez e modernidade ao ambiente,
                     ideal para receber amigos e família.
                   </p>
                 </div>
 
-                <div className="bg-white p-6 rounded-2xl shadow-md">
-                  <div className="flex items-center gap-3 mb-4">
+                <div className="bg-white p-6 rounded-2xl shadow-md text-center">
+                  <div className="flex flex-col items-center gap-3 mb-4">
                     <span className="text-2xl">🔄</span>
-                    <h4 className="text-xl font-bold text-gray-900">Espaço Fluido</h4>
+                    <h4 className="text-xl font-bold text-gray-900 font-heading">Espaço Fluido</h4>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 font-body">
                     Distribuição inteligente que conecta todos os ambientes,
                     criando sensação de amplitude e conforto.
                   </p>
@@ -69,57 +69,61 @@ export default function FloorPlan () {
               </div>
 
               {/* Composição Detalhada */}
-              <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200">
-                <h4 className="text-xl font-bold text-blue-900 mb-4">Composição do Apartamento</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-600 text-lg">🛏️</span>
-                    <div>
-                      <div className="font-semibold text-blue-900">2 Quartos</div>
-                      <div className="text-sm text-blue-700">1 Suíte + 1 Quarto</div>
+              <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200 text-center">
+                <h4 className="text-xl font-bold text-blue-900 mb-6 font-heading">
+                  Composição do Apartamento
+                </h4>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="flex flex-col items-center gap-2">
+                    <span className="text-blue-600 text-2xl">🛏️</span>
+                    <div className="text-center">
+                      <div className="font-semibold text-blue-900 font-heading">2 Quartos</div>
+                      <div className="text-sm text-blue-700 font-body">1 Suíte + 1 Quarto</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-600 text-lg">🚿</span>
-                    <div>
-                      <div className="font-semibold text-blue-900">2 Banheiros</div>
-                      <div className="text-sm text-blue-700">Completos</div>
+                  <div className="flex flex-col items-center gap-2">
+                    <span className="text-blue-600 text-2xl">🚿</span>
+                    <div className="text-center">
+                      <div className="font-semibold text-blue-900 font-heading">2 Banheiros</div>
+                      <div className="text-sm text-blue-700 font-body">Completos</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-600 text-lg">🍽️</span>
-                    <div>
-                      <div className="font-semibold text-blue-900">Cozinha</div>
-                      <div className="text-sm text-blue-700">Americana Integrada</div>
+                  <div className="flex flex-col items-center gap-2">
+                    <span className="text-blue-600 text-2xl">🍽️</span>
+                    <div className="text-center">
+                      <div className="font-semibold text-blue-900 font-heading">Cozinha</div>
+                      <div className="text-sm text-blue-700 font-body">Americana Integrada</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-600 text-lg">🌿</span>
-                    <div>
-                      <div className="font-semibold text-blue-900">Sacada</div>
-                      <div className="text-sm text-blue-700">Área Gourmet</div>
+                  <div className="flex flex-col items-center gap-2">
+                    <span className="text-blue-600 text-2xl">🌿</span>
+                    <div className="text-center">
+                      <div className="font-semibold text-blue-900 font-heading">Sacada</div>
+                      <div className="text-sm text-blue-700 font-body">Área Gourmet</div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Benefícios */}
-              <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
-                <h4 className="text-xl font-bold text-yellow-800 mb-4">Por que escolher esta planta?</h4>
-                <ul className="space-y-2 text-yellow-700">
-                  <li className="flex items-center gap-2">
+              <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200 text-center">
+                <h4 className="text-xl font-bold text-yellow-800 mb-6 font-heading">
+                  Por que escolher esta planta?
+                </h4>
+                <ul className="space-y-3 text-yellow-700 font-body">
+                  <li className="flex items-center justify-center gap-2">
                     <span className="text-yellow-600">✓</span>
                     <span>Melhor aproveitamento do espaço</span>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center justify-center gap-2">
                     <span className="text-yellow-600">✓</span>
                     <span>Iluminação natural em todos os ambientes</span>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center justify-center gap-2">
                     <span className="text-yellow-600">✓</span>
                     <span>Ventilação cruzada</span>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center justify-center gap-2">
                     <span className="text-yellow-600">✓</span>
                     <span>Privacidade entre os quartos</span>
                   </li>

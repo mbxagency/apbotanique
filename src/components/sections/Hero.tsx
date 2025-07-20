@@ -12,6 +12,7 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
 
   const slides = [
     {src: '/images/sala/sala1.jpg', alt: 'Apartamento Botanique - Sala de estar'},
+    {src: '/images/suite/suite1.jpg', alt: 'Apartamento Botanique - Suíte principal'},
     {src: '/images/cozinha/cozinha1.jpg', alt: 'Apartamento Botanique - Cozinha americana'},
     {src: '/images/quartos/quarto1.jpg', alt: 'Apartamento Botanique - Quarto principal'},
     {src: '/images/sacada/sacada1.jpg', alt: 'Apartamento Botanique - Sacada'},
@@ -112,9 +113,36 @@ export default function Hero ({onWhatsAppClick, onPhoneClick}: HeroProps) {
           <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold mb-2 text-green-200 font-heading">
             Edifício Botanique
           </h3>
-          <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 opacity-90">
+          <p className="text-base md:text-lg lg:text-xl mb-4 opacity-90">
             Jardim Botânico • Curitiba
           </p>
+
+          {/* Preço com Desconto */}
+          <div className="mb-6 md:mb-8">
+            <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/30 inline-block">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+                <div className="text-center">
+                  <div className="text-sm text-gray-300 mb-1">Preço Original</div>
+                  <div className="text-lg md:text-xl font-bold text-gray-400 line-through">R$ 779.000</div>
+                </div>
+                
+                <div className="text-2xl md:text-3xl text-red-400 animate-pulse font-bold">
+                  ↓
+                </div>
+                
+                <div className="text-center">
+                  <div className="text-sm text-green-300 mb-1">Preço com Desconto</div>
+                  <div className="text-2xl md:text-3xl font-bold text-green-400">R$ 729.000</div>
+                </div>
+              </div>
+              
+              <div className="mt-3 text-center">
+                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  Desconto de R$ 50.000
+                </span>
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <button
