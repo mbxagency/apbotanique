@@ -1,12 +1,11 @@
 'use client';
 
 interface ContactProps {
-  onSubmit?: () => void;
   onWhatsAppClick?: () => void;
   onPhoneClick?: () => void;
 }
 
-export default function Contact({ onSubmit, onWhatsAppClick, onPhoneClick }: ContactProps) {
+export default function Contact({ onWhatsAppClick, onPhoneClick }: ContactProps) {
   const handleWhatsAppClick = () => {
     const phone = '5541991328657';
     const message = encodeURIComponent(`Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179`);
