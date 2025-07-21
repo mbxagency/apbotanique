@@ -14,13 +14,11 @@ import RegionDevelopment from '@/components/sections/RegionDevelopment';
 import PropertyHighlights from '@/components/sections/PropertyHighlights';
 import Contact from '@/components/sections/Contact';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
-import {useAnalytics} from '@/hooks/useAnalytics';
 
 export default function HomePage () {
-  const {trackEvent} = useAnalytics();
-
   const handleWhatsAppClick = (source: string) => {
-    trackEvent('whatsapp_click', {source});
+    // Analytics tracking removed for deployment
+    console.log('WhatsApp clicked from:', source);
   };
 
   return (

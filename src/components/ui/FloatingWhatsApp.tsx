@@ -7,7 +7,7 @@ interface FloatingWhatsAppProps {
 export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
   const handleClick = () => {
     const phone = '5541991328657';
-    const message = encodeURIComponent('Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de agendar uma visita e saber mais informações. Código: ARA179');
+    const message = encodeURIComponent('Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de saber mais informações. Código: ARA179.');
 
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, '_blank');
