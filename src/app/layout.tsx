@@ -1,15 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
-const playfair = Playfair_Display({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-montserrat',
+  display: 'swap',
 })
 
 // Metadados profissionais
@@ -81,8 +83,6 @@ export const metadata: Metadata = {
   }
 };
 
-
-
 // Structured Data para imóveis
 const structuredData = {
   '@context': 'https://schema.org',
@@ -140,8 +140,6 @@ export default function RootLayout ({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#16a34a" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         
@@ -153,7 +151,7 @@ export default function RootLayout ({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

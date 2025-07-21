@@ -7,7 +7,7 @@ export default function Region () {
         <div className="max-w-6xl mx-auto">
           {/* Título Principal */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
               A Região Jardim Botânico
             </h2>
             <h3 className="text-xl md:text-2xl font-semibold text-green-600 mb-6 font-heading">

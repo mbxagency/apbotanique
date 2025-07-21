@@ -24,34 +24,13 @@ export default function Realtor () {
                 <p className="text-lg text-gray-600 mb-6">
                   Profissional credenciado com anos de experiência no mercado imobiliário de Curitiba.
                 </p>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-white p-4 rounded-xl shadow-soft">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-green-600 text-xl">🏛️</span>
-                      <span className="font-bold text-gray-900">CRECI: 9169</span>
-                    </div>
-                    <p className="text-sm text-gray-600">Profissional Credenciado</p>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                  <div className="bg-white px-4 py-2 rounded-lg shadow-sm">
+                    <span className="text-sm font-semibold text-gray-700">CRECI: 9169</span>
                   </div>
-
-                  <div className="bg-white p-4 rounded-xl shadow-soft">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-green-600 text-xl">📱</span>
-                      <span className="font-bold text-gray-900">(41) 99132-8657</span>
-                    </div>
-                    <p className="text-sm text-gray-600">WhatsApp e Telefone</p>
+                  <div className="bg-white px-4 py-2 rounded-lg shadow-sm">
+                    <span className="text-sm font-semibold text-gray-700">(41) 99132-8657</span>
                   </div>
-                </div>
-
-                <div className="bg-green-100 p-4 rounded-xl">
-                  <div className="flex items-center justify-center gap-2 text-green-800">
-                    <span className="text-xl">💼</span>
-                    <span className="font-bold">Especialista em Imóveis de Luxo</span>
-                  </div>
-                  <p className="text-green-700 text-sm mt-2">
-                    Conheça o apartamento do Residencial Botanique com um profissional experiente
-                    que entende suas necessidades.
-                  </p>
                 </div>
               </div>
             </div>

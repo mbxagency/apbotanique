@@ -149,7 +149,7 @@ export default function Location () {
         <div className="max-w-6xl mx-auto">
           {/* Título */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
               📍 Localização Estratégica
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">

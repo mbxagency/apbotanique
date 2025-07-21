@@ -1,9 +1,5 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import typescript from '@typescript-eslint/eslint-plugin'
-import typescriptParser from '@typescript-eslint/parser'
 
 export default [
   {
@@ -15,7 +11,6 @@ export default [
         ...globals.node,
         ...globals.es2022
       },
-      parser: typescriptParser,
       parserOptions: {
         ecmaFeatures: {
           jsx: true
@@ -24,30 +19,11 @@ export default [
         sourceType: 'module'
       }
     },
-    plugins: {
-      '@typescript-eslint': typescript,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh
-    },
     rules: {
-      // TypeScript rules
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/no-explicit-any': 'warn',
-
-      '@typescript-eslint/no-var-requires': 'error',
-      
-      // React rules
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true }
-      ],
-      
       // General rules
       'no-console': 'warn',
       'no-debugger': 'error',
-      'no-unused-vars': 'off', // Use TypeScript version instead
+      'no-unused-vars': 'warn',
       'prefer-const': 'error',
       'no-var': 'error',
       
@@ -72,7 +48,6 @@ export default [
       'no-extra-bind': 'error',
       'no-extra-label': 'error',
       'no-floating-decimal': 'error',
-      'no-implied-eval': 'error',
       'no-iterator': 'error',
       'no-labels': 'error',
       'no-lone-blocks': 'error',

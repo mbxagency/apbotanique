@@ -11,7 +11,7 @@ export default function Video () {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-heading">
               Conheça o Apartamento
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">

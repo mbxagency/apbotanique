@@ -49,10 +49,10 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-montserrat)', 'sans-serif'],
+        heading: ['var(--font-montserrat)', 'sans-serif'],
+        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
