@@ -15,21 +15,21 @@ export default function Location () {
   const distances = [
     {
       place: 'Jardim Botânico',
-      distance: '1,2 km',
+      distance: '500 m',
       duration: '3 min',
       icon: '🌺',
       address: 'R. Eng. Ostoja Roguski, 690 - Jardim Botânico'
     },
     {
       place: 'Shopping Jockey Plaza',
-      distance: '2,8 km',
+      distance: '2,2 km',
       duration: '7 min',
       icon: '🛍️',
       address: 'Av. Pres. Getúlio Vargas, 2645 - Água Verde'
     },
     {
       place: 'Hospital Cajuru',
-      distance: '3,1 km',
+      distance: '3 km',
       duration: '8 min',
       icon: '🏥',
       address: 'R. São José, 300 - Centro'
@@ -42,8 +42,8 @@ export default function Location () {
       address: 'Av. Rocha Pombo, s/n - São José dos Pinhais'
     },
     {
-      place: 'Parque Barigui',
-      distance: '4,2 km',
+      place: 'Parc Autódromo',
+      distance: '1,8 km',
       duration: '10 min',
       icon: '🌳',
       address: 'Av. Cândido Hartmann, s/n - Bigorrilho'
@@ -71,7 +71,7 @@ export default function Location () {
     {
       icon: '🌳',
       title: 'Parques Urbanos',
-      description: 'Mais de 30 parques e áreas verdes'
+      description: 'Mais de 20 parques e áreas verdes'
     },
     {
       icon: '🚌',
@@ -144,28 +144,28 @@ export default function Location () {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Título */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
               📍 Localização Estratégica
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Localizado no coração do Jardim Botânico, este apartamento oferece acesso privilegiado
               aos principais pontos turísticos e serviços de Curitiba.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Mapa Interativo */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                   🗺️ Mapa Interativo
                 </h3>
-                <div className="bg-white p-4 rounded-xl shadow-soft">
+                <div className="bg-white p-3 sm:p-4 rounded-xl shadow-soft">
                   <div className="aspect-video rounded-lg overflow-hidden">
                     <iframe
                       src={getSelectedMapUrl()}
@@ -183,15 +183,15 @@ export default function Location () {
 
               {/* Botões de Destino */}
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                   🎯 Selecione um Destino
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                   {distances.map((item, index) => (
                     <button
                       key={index}
                       onClick={() => handleDestinationClick(item.place)}
-                      className={`p-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={`p-2 sm:p-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
                         selectedDestination === item.place
                           ? 'bg-green-600 text-white shadow-md'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -206,44 +206,44 @@ export default function Location () {
 
             {/* Lista de Destinos */}
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 📍 Pontos Turísticos
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {distances.map((item, index) => {
                   const route = routeInfo[item.place];
                   return (
                     <div
                       key={index}
-                      className={`p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300 cursor-pointer ${
+                      className={`p-3 sm:p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300 cursor-pointer ${
                         selectedDestination === item.place
                           ? 'bg-green-50 border-2 border-green-200'
                           : 'bg-white'
                       }`}
                       onClick={() => handleDestinationClick(item.place)}
                     >
-                      <div className="flex items-center justify-center gap-3">
-                        <span className="text-2xl">{item.icon}</span>
+                      <div className="flex items-center justify-center gap-2 sm:gap-3">
+                        <span className="text-xl sm:text-2xl">{item.icon}</span>
                         <div className="text-center flex-1">
-                          <h4 className="font-semibold text-gray-900 hover:text-gray-900">
+                          <h4 className="font-semibold text-gray-900 hover:text-gray-900 text-sm sm:text-base">
                             {item.place}
                           </h4>
                           {route ? (
                             <>
-                              <p className="text-sm text-gray-600 hover:text-gray-600">
+                              <p className="text-xs sm:text-sm text-gray-600 hover:text-gray-600">
                                 {route.distance}
                               </p>
-                              <p className="text-sm text-green-700 font-semibold hover:text-green-700">
+                              <p className="text-xs sm:text-sm text-green-700 font-semibold hover:text-green-700">
                                 {route.duration}
                               </p>
                             </>
                           ) : (
-                            <div className="flex items-center justify-center gap-2">
-                              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-green-600"></div>
-                              <span className="text-sm text-gray-500">Calculando rota...</span>
+                            <div className="flex items-center justify-center gap-1 sm:gap-2">
+                              <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-b-2 border-green-600"></div>
+                              <span className="text-xs sm:text-sm text-gray-500">Calculando rota...</span>
                             </div>
                           )}
-                          <p className="text-xs text-gray-500 mt-1">{item.address}</p>
+                          <p className="text-xs text-gray-500 mt-1 hidden sm:block">{item.address}</p>
                         </div>
                         <div className="text-green-600">
                           {selectedDestination === item.place && '✓'}
@@ -257,20 +257,20 @@ export default function Location () {
           </div>
 
           {/* Curiosidades da Região */}
-          <div className="mt-8 md:mt-12">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">
+          <div className="mt-6 sm:mt-8 md:mt-12">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
               🌟 Sobre a Região
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {curiosities.map((item, index) => (
-                <div key={index} className="bg-white p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col items-center text-center gap-3">
-                    <span className="text-2xl">{item.icon}</span>
+                <div key={index} className="bg-white p-3 sm:p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300">
+                  <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
+                    <span className="text-xl sm:text-2xl">{item.icon}</span>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-gray-900">
+                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-gray-900 text-sm sm:text-base">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-600 hover:text-gray-600">
+                      <p className="text-xs sm:text-sm text-gray-600 hover:text-gray-600">
                         {item.description}
                       </p>
                     </div>
@@ -281,21 +281,21 @@ export default function Location () {
           </div>
 
           {/* Destaque da Localização */}
-          <div className="mt-8 md:mt-12">
-            <div className="bg-gradient-to-r from-green-600 to-green-700 p-6 md:p-8 rounded-2xl text-white text-center">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">
+          <div className="mt-6 sm:mt-8 md:mt-12">
+            <div className="bg-gradient-to-r from-green-600 to-green-700 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl text-white text-center">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">
                 🏆 Localização Estratégica
               </h3>
-              <p className="text-green-100 mb-4">
+              <p className="text-green-100 mb-4 text-sm sm:text-base">
                 Localizado no coração do Jardim Botânico, você tem acesso rápido a todos os principais
                 pontos turísticos de Curitiba, combinando tranquilidade residencial com facilidade de
                 locomoção.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <span className="bg-white/20 px-3 py-1 rounded-full">Centro Turístico</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">Área Nobre</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">Acesso Fácil</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">Valorização</span>
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
+                <span className="bg-white/20 px-2 sm:px-3 py-1 rounded-full">Centro Turístico</span>
+                <span className="bg-white/20 px-2 sm:px-3 py-1 rounded-full">Área Nobre</span>
+                <span className="bg-white/20 px-2 sm:px-3 py-1 rounded-full">Acesso Fácil</span>
+                <span className="bg-white/20 px-2 sm:px-3 py-1 rounded-full">Valorização</span>
               </div>
             </div>
           </div>

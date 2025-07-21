@@ -14,30 +14,30 @@ export default function QuickInfo () {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 font-heading">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 font-heading">
             Características do Imóvel
           </h2>
-          <p className="text-gray-600 font-body">
+          <p className="text-sm sm:text-base text-gray-600 font-body">
             Conheça todos os detalhes deste apartamento exclusivo
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9 gap-3 sm:gap-4 md:gap-6">
           {infoItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white p-4 md:p-6 rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-2 text-center group border border-gray-100"
+              className="bg-white p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 text-center group border border-gray-100"
             >
-              <div className="text-2xl md:text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
-              <div className={`text-sm md:text-lg font-bold mb-2 ${item.color}`}>
+              <div className={`text-xs sm:text-sm md:text-lg font-bold mb-1 sm:mb-2 ${item.color}`}>
                 {item.value}
               </div>
-              <div className="text-xs md:text-sm text-gray-600 font-body">
+              <div className="text-xs text-gray-600 font-body">
                 {item.label}
               </div>
             </div>

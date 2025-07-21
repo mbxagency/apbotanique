@@ -73,15 +73,15 @@ export default function Gallery () {
     : images.filter(img => img.category === selectedCategory);
 
   return (
-    <section id="galeria" className="py-16 bg-gray-50">
+    <section id="galeria" className="py-8 sm:py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Título */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
               📸 Galeria de Fotos
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Explore cada detalhe deste apartamento através de nossa galeria completa de fotos.
               Cada imagem foi cuidadosamente selecionada para mostrar a qualidade e o charme do
               Residencial Botanique.
@@ -89,13 +89,13 @@ export default function Gallery () {
           </div>
 
           {/* Filtros */}
-          <div className="mb-8">
-            <div className="flex flex-wrap justify-center gap-3">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                  className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1 sm:gap-2 ${
                     selectedCategory === category.id
                       ? 'bg-green-600 text-white shadow-md'
                       : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
@@ -109,21 +109,21 @@ export default function Gallery () {
           </div>
 
           {/* Grid de Imagens */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {filteredImages.map((image, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
+                className="group relative overflow-hidden rounded-lg sm:rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer bg-white"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white text-2xl">🔍</span>
+                    <span className="text-white text-xl sm:text-2xl">🔍</span>
                   </div>
                 </div>
               </div>
@@ -133,10 +133,10 @@ export default function Gallery () {
           {/* Modal */}
           {selectedImage && (
             <div
-              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-2 sm:p-4"
               onClick={() => setSelectedImage(null)}
             >
-              <div className="relative max-w-4xl max-h-full">
+              <div className="relative max-w-full max-h-full">
                 <img
                   src={selectedImage}
                   alt="Imagem ampliada"
@@ -144,7 +144,7 @@ export default function Gallery () {
                 />
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition-colors"
+                  className="absolute top-2 sm:top-4 right-2 sm:right-4 text-white text-xl sm:text-2xl hover:text-gray-300 transition-colors bg-black/50 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
                 >
                   ✕
                 </button>
