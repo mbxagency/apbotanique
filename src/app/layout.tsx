@@ -1,39 +1,16 @@
-import type {Metadata, Viewport} from 'next';
-import {Poppins, Playfair_Display, Montserrat, Inter} from 'next/font/google';
-import './globals.css';
-import Header from '@/components/layout/Header';
+import type { Metadata } from 'next'
+import { Inter, Playfair_Display } from 'next/font/google'
+import './globals.css'
 
-// Fontes otimizadas
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-  display: 'swap',
-  preload: true
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-playfair',
-  display: 'swap',
-  preload: true
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-montserrat',
-  display: 'swap',
-  preload: true
-});
-
-const inter = Inter({
+const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-  preload: true
-});
+})
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  variable: '--font-playfair',
+})
 
 // Metadados profissionais
 export const metadata: Metadata = {
@@ -104,17 +81,7 @@ export const metadata: Metadata = {
   }
 };
 
-// Viewport otimizado
-export const viewport: Viewport = {
-  themeColor: [
-    {media: '(prefers-color-scheme: light)', color: '#16a34a'},
-    {media: '(prefers-color-scheme: dark)', color: '#15803d'}
-  ],
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true
-};
+
 
 // Structured Data para imóveis
 const structuredData = {
@@ -171,28 +138,23 @@ export default function RootLayout ({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${poppins.variable} ${playfairDisplay.variable} ${montserrat.variable} ${inter.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="pt-BR">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#16a34a" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        
+        {/* Schema.org structured data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#16a34a" />
-        <meta name="msapplication-TileColor" content="#16a34a" />
       </head>
-      <body className="antialiased selection:bg-primary-500 selection:text-white">
-        <Header />
-        <div id="root">
-          {children}
-        </div>
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+        {children}
       </body>
     </html>
   );
