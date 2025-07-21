@@ -3,36 +3,11 @@
   "version": "1.0.0",
   "description": "Site profissional para o apartamento Botanique - Jardim Botânico, Curitiba",
   "private": true,
-  "author": "Arau Imóveis",
-  "license": "UNLICENSED",
-  "homepage": "https://botanique.arauimoveis.com.br",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/arauimoveis/botanique.git"
-  },
-  "keywords": [
-    "nextjs",
-    "react",
-    "typescript",
-    "tailwindcss",
-    "imobiliária",
-    "curitiba",
-    "jardim-botânico"
-  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "clean": "rm -rf .next out dist",
-    "analyze": "ANALYZE=true npm run build",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -59,12 +34,6 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.x",
-    "npm": ">=9.0.0"
-  },
-  "browserslist": [
-    ">0.3%",
-    "not dead",
-    "not op_mini all"
-  ]
+    "node": ">=18.x"
+  }
 }
