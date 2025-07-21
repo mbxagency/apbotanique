@@ -62,14 +62,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false
   },
-  metadataBase: new URL('https://botanique.arauimoveis.com.br'),
+  metadataBase: new URL('https://apbotanique.vercel.app'),
   alternates: {
     canonical: '/'
   },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://botanique.arauimoveis.com.br',
+    url: 'https://apbotanique.vercel.app',
     title: 'Botanique - Apartamento no Jardim Botânico | Arau Imóveis',
     description: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba. 2 quartos (1 suíte), 2 vagas, academia, áreas comuns.',
     siteName: 'Botanique - Arau Imóveis',
