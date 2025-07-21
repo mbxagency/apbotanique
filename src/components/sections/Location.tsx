@@ -1,35 +1,28 @@
 'use client';
 
-import {useState, useEffect} from 'react';
-
-interface RouteInfo {
-  distance: string;
-  duration: string;
-  loading: boolean;
-}
+import {useState} from 'react';
 
 export default function Location () {
   const [selectedDestination, setSelectedDestination] = useState<string>('');
-  const [routeInfo, setRouteInfo] = useState<Record<string, RouteInfo>>({});
 
   const distances = [
     {
       place: 'Jardim Botânico',
-      distance: '500 m',
+      distance: '1,2 km',
       duration: '3 min',
       icon: '🌺',
       address: 'R. Eng. Ostoja Roguski, 690 - Jardim Botânico'
     },
     {
       place: 'Shopping Jockey Plaza',
-      distance: '2,2 km',
+      distance: '2,8 km',
       duration: '7 min',
       icon: '🛍️',
       address: 'Av. Pres. Getúlio Vargas, 2645 - Água Verde'
     },
     {
       place: 'Hospital Cajuru',
-      distance: '3 km',
+      distance: '3,1 km',
       duration: '8 min',
       icon: '🏥',
       address: 'R. São José, 300 - Centro'
@@ -43,7 +36,7 @@ export default function Location () {
     },
     {
       place: 'Parc Autódromo',
-      distance: '1,8 km',
+      distance: '4,2 km',
       duration: '10 min',
       icon: '🌳',
       address: 'Av. Cândido Hartmann, s/n - Bigorrilho'
@@ -71,7 +64,7 @@ export default function Location () {
     {
       icon: '🌳',
       title: 'Parques Urbanos',
-      description: 'Mais de 20 parques e áreas verdes'
+      description: 'Mais de 30 parques e áreas verdes'
     },
     {
       icon: '🚌',
@@ -79,39 +72,6 @@ export default function Location () {
       description: 'Sistema integrado de ônibus e BRT'
     }
   ];
-
-  const getRouteInfo = async (destination: string, placeName: string) => {
-    const apartmentAddress = 'Av. Prefeito Maurício Fruet, 1270, Jardim Botânico, Curitiba';
-    const destinationAddress = destination;
-
-    try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/directions/json?origin=${encodeURIComponent(
-          apartmentAddress
-        )}&destination=${encodeURIComponent(
-          destinationAddress
-        )}&key=YOUR_API_KEY`
-      );
-
-      if (response.ok) {
-        const data = await response.json();
-        if (data.routes && data.routes.length > 0) {
-          const route = data.routes[0];
-          const leg = route.legs[0];
-          setRouteInfo(prev => ({
-            ...prev,
-            [placeName]: {
-              distance: leg.distance.text,
-              duration: leg.duration.text,
-              loading: false
-            }
-          }));
-        }
-      }
-    } catch {
-      // Silently handle error
-    }
-  };
 
   const handleDestinationClick = (place: string) => {
     setSelectedDestination(place);
@@ -136,12 +96,6 @@ export default function Location () {
       apartmentAddress
     )}&destination=${encodeURIComponent(destinationAddress)}&mode=driving`;
   };
-
-  useEffect(() => {
-    distances.forEach(item => {
-      getRouteInfo(item.address, item.place);
-    });
-  }, []);
 
   return (
     <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
@@ -210,48 +164,36 @@ export default function Location () {
                 📍 Pontos Turísticos
               </h3>
               <div className="space-y-3 sm:space-y-4">
-                {distances.map((item, index) => {
-                  const route = routeInfo[item.place];
-                  return (
-                    <div
-                      key={index}
-                      className={`p-3 sm:p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300 cursor-pointer ${
-                        selectedDestination === item.place
-                          ? 'bg-green-50 border-2 border-green-200'
-                          : 'bg-white'
-                      }`}
-                      onClick={() => handleDestinationClick(item.place)}
-                    >
-                      <div className="flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-xl sm:text-2xl">{item.icon}</span>
-                        <div className="text-center flex-1">
-                          <h4 className="font-semibold text-gray-900 hover:text-gray-900 text-sm sm:text-base">
-                            {item.place}
-                          </h4>
-                          {route ? (
-                            <>
-                              <p className="text-xs sm:text-sm text-gray-600 hover:text-gray-600">
-                                {route.distance}
-                              </p>
-                              <p className="text-xs sm:text-sm text-green-700 font-semibold hover:text-green-700">
-                                {route.duration}
-                              </p>
-                            </>
-                          ) : (
-                            <div className="flex items-center justify-center gap-1 sm:gap-2">
-                              <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-b-2 border-green-600"></div>
-                              <span className="text-xs sm:text-sm text-gray-500">Calculando rota...</span>
-                            </div>
-                          )}
-                          <p className="text-xs text-gray-500 mt-1 hidden sm:block">{item.address}</p>
-                        </div>
-                        <div className="text-green-600">
-                          {selectedDestination === item.place && '✓'}
-                        </div>
+                {distances.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`p-3 sm:p-4 rounded-xl shadow-soft hover:shadow-md transition-all duration-300 cursor-pointer ${
+                      selectedDestination === item.place
+                        ? 'bg-green-50 border-2 border-green-200'
+                        : 'bg-white'
+                    }`}
+                    onClick={() => handleDestinationClick(item.place)}
+                  >
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
+                      <span className="text-xl sm:text-2xl">{item.icon}</span>
+                      <div className="text-center flex-1">
+                        <h4 className="font-semibold text-gray-900 hover:text-gray-900 text-sm sm:text-base">
+                          {item.place}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-gray-600 hover:text-gray-600">
+                          {item.distance}
+                        </p>
+                        <p className="text-xs sm:text-sm text-green-700 font-semibold hover:text-green-700">
+                          {item.duration}
+                        </p>
+                        <p className="text-xs text-gray-500 mt-1 hidden sm:block">{item.address}</p>
+                      </div>
+                      <div className="text-green-600">
+                        {selectedDestination === item.place && '✓'}
                       </div>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

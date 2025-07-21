@@ -70,61 +70,61 @@ export default function Hero () {
         ))}
 
         {/* Overlay com Informações */}
-        <div className="absolute inset-0 flex items-center justify-center z-10 px-4">
+        <div className="absolute inset-0 flex flex-col justify-end pb-20 sm:pb-24 md:pb-32 z-10 px-4">
           <div className="text-center text-white w-full max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 font-heading text-shadow-lg leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 font-heading text-shadow-lg leading-tight">
               Residencial Botanique
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl mb-2 sm:mb-4 text-gray-200 font-heading text-shadow">
+            <p className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-gray-200 font-heading text-shadow">
               {slides[currentSlide]?.title || ''}
             </p>
-            <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 text-gray-300 font-body">
+            <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 text-gray-300 font-body">
               {slides[currentSlide]?.description || ''}
             </p>
 
             {/* Informações do Imóvel */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-white/20 shadow-2xl">
-              <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 border border-white/20 shadow-2xl">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
                 <div className="text-center">
-                  <div className="text-sm sm:text-lg md:text-xl font-bold text-gray-400 line-through mb-1 sm:mb-2">
+                  <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-400 line-through mb-1">
                     R$ 779.000
                   </div>
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-green-400 mb-2 sm:mb-3 text-shadow">
+                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-green-400 mb-1 sm:mb-2 text-shadow">
                     R$ 729.000
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-300 font-body">Preço com Desconto</div>
+                  <div className="text-xs text-gray-300 font-body">Preço com Desconto</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-2 sm:mb-3 text-shadow">
+                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-400 mb-1 sm:mb-2 text-shadow">
                     R$ 254
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-300 font-body">Condomínio</div>
+                  <div className="text-xs text-gray-300 font-body">Condomínio</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-purple-400 mb-2 sm:mb-3 text-shadow">
+                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1 sm:mb-2 text-shadow">
                     ~80m²
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-300 font-body">Área Privativa</div>
+                  <div className="text-xs text-gray-300 font-body">Área Privativa</div>
                 </div>
               </div>
             </div>
 
             {/* Botões de Ação */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center">
               <a
                 href="https://wa.me/5541991328657?text=Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de saber mais informações. Código: ARA179."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-xl font-bold hover:from-green-700 hover:to-green-800 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg font-bold hover:from-green-700 hover:to-green-800 transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                <span className="text-lg sm:text-xl md:text-2xl">📱</span>
+                <span className="text-sm sm:text-lg md:text-xl">📱</span>
                 Agendar Visita
               </a>
               <a
                 href="#galeria"
-                className="bg-white/20 backdrop-blur-md text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-xl font-bold hover:bg-white/30 transition-all duration-300 border-2 border-white/30 flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-white/20 backdrop-blur-md text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg font-bold hover:bg-white/30 transition-all duration-300 border-2 border-white/30 flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                <span className="text-lg sm:text-xl md:text-2xl">📸</span>
+                <span className="text-sm sm:text-lg md:text-xl">📸</span>
                 Ver Fotos
               </a>
             </div>
@@ -148,7 +148,7 @@ export default function Hero () {
         </button>
 
         {/* Indicadores */}
-        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3 md:space-x-4 z-20">
+        <div className="absolute bottom-2 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3 md:space-x-4 z-20">
           {slides.map((_, index) => (
             <button
               key={index}

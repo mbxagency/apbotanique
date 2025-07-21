@@ -23,27 +23,17 @@ export default function Video () {
           <div className="relative px-2 sm:px-4">
             <div className="bg-black rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
               <video
-                className="w-full h-auto max-h-[60vh] sm:max-h-[70vh] md:max-h-none"
+                className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-none"
                 controls
                 poster="/images/others/nova.avif"
                 preload="metadata"
                 playsInline
                 controlsList="nodownload"
+                style={{ minHeight: '200px' }}
               >
                 <source src="/images/others/botanique_arau.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
               </video>
-            </div>
-
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none px-2 sm:px-4">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 sm:p-4 md:p-6 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-auto">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-gray-900 ml-0.5 sm:ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
 
