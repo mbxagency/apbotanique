@@ -29,7 +29,7 @@ export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
         aria-label="Falar no WhatsApp"
       >
         <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
-          💬
+          WhatsApp
         </span>
       </button>
 

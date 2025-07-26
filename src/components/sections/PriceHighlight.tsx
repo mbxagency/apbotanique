@@ -7,17 +7,17 @@ export default function PriceHighlight () {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
-              🔥 OPORTUNIDADE ÚNICA! 🔥
+              OPORTUNIDADE ÚNICA!
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 font-body">
-              <strong>ÚLTIMA UNIDADE DISPONÍVEL!</strong> Desconto exclusivo por tempo limitado
+              <strong>UNIDADE PROMOCIONAL!</strong> Desconto exclusivo por tempo limitado
             </p>
           </div>
 
           <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-soft border-2 border-green-200">
             <div className="flex flex-col items-center gap-6 sm:gap-8">
               <div className="bg-gradient-to-br from-red-500 to-red-600 p-6 sm:p-8 rounded-full text-white text-3xl sm:text-4xl shadow-lg">
-                💰
+                $
               </div>
 
               <div className="text-center w-full">
@@ -45,12 +45,10 @@ export default function PriceHighlight () {
                 {/* Destaque da economia */}
                 <div className="bg-gradient-to-r from-green-500 to-green-600 p-4 sm:p-6 rounded-lg sm:rounded-xl mb-4 sm:mb-6 text-white text-center">
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
-                    <span className="text-xl sm:text-2xl">🎉</span>
                     <span className="text-lg sm:text-2xl font-bold font-heading">Economia de R$ 50.000</span>
-                    <span className="text-xl sm:text-2xl">🎉</span>
                   </div>
                   <p className="text-green-100 font-body text-sm sm:text-base">
-                    <strong>Não perca esta oportunidade única!</strong> Última unidade disponível!
+                    <strong>Não perca esta oportunidade única!</strong> Unidade promocional!
                   </p>
                 </div>
 
@@ -58,7 +56,6 @@ export default function PriceHighlight () {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6 max-w-2xl mx-auto">
                   <div className="bg-yellow-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-yellow-200">
                     <div className="flex items-center justify-center gap-1 sm:gap-2 text-yellow-800 mb-2">
-                      <span className="text-lg sm:text-xl">🏆</span>
                       <span className="font-bold font-heading text-sm sm:text-base">Condomínio: R$ 254,10/mês</span>
                     </div>
                     <p className="text-center text-yellow-700 text-xs sm:text-sm font-body">
@@ -68,7 +65,6 @@ export default function PriceHighlight () {
 
                   <div className="bg-blue-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-blue-200">
                     <div className="flex items-center justify-center gap-1 sm:gap-2 text-blue-800 mb-2">
-                      <span className="text-lg sm:text-xl">💰</span>
                       <span className="font-bold font-heading text-sm sm:text-base">+ de R$ 90.000 em caixa</span>
                     </div>
                     <p className="text-center text-blue-700 text-xs sm:text-sm font-body">
@@ -80,7 +76,6 @@ export default function PriceHighlight () {
                 {/* Call to action */}
                 <div className="bg-red-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-red-200 text-center max-w-2xl mx-auto">
                   <div className="flex items-center justify-center gap-1 sm:gap-2 text-red-800 mb-2">
-                    <span className="text-lg sm:text-xl">⏰</span>
                     <span className="font-bold font-heading text-sm sm:text-base">Oferta por Tempo Limitado</span>
                   </div>
                   <p className="text-red-700 text-xs sm:text-sm font-body">

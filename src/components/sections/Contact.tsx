@@ -56,7 +56,7 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
                 }}
                 className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors duration-300 flex items-center justify-center gap-2"
               >
-                📱 WhatsApp
+                WhatsApp
               </a>
               <a
                 href="tel:+5541991328657"
@@ -70,7 +70,7 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
                 }}
                 className="bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2"
               >
-                📞 Telefone
+                Telefone
               </a>
             </div>
 
@@ -81,11 +81,11 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
               </p>
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
-                  <span>📍</span>
+                  <span>Localização:</span>
                   <span>Jardim Botânico, Curitiba</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>💰</span>
+                  <span>Preço:</span>
                   <span>R$ 729.000,00</span>
                 </div>
                 <div className="flex items-center gap-2">

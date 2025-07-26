@@ -54,7 +54,7 @@ export default function UrgencyBanner () {
 
         <div className="flex items-center space-x-2">
           <span className="text-sm">Economia de R$ 50.000</span>
-          <span className="text-xl">💰</span>
+                      <span className="text-xl">R$</span>
         </div>
       </div>
     </div>
