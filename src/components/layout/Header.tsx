@@ -8,9 +8,9 @@ export default function Header () {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <div className="text-center md:text-left">
-              <h1 className="text-lg md:text-xl font-bold">
-                Residencial Botanique
-              </h1>
+                              <h1 className="text-lg md:text-xl font-bold">
+                  🔥 APARTAMENTO À VENDA
+                </h1>
               <p className="text-sm text-green-100">
                 Jardim Botânico, Curitiba - PR
               </p>

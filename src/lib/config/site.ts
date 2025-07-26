@@ -40,19 +40,33 @@ export const siteConfig = {
 
   // SEO
   seo: {
-    title: 'Botanique - Apartamento no Jardim Botânico | Arau Imóveis',
-    description: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba. 2 quartos (1 suíte), 2 vagas, academia, áreas comuns. R$ 729.000,00',
+    title: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
+    description: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial! Agende sua visita hoje mesmo!',
     keywords: [
-      'apartamento',
-      'jardim botânico',
-      'curitiba',
-      'arau imóveis',
-      'botanique',
-      'semi mobiliado',
-      '2 quartos',
-      'suíte',
-      'academia',
-      'áreas comuns'
+      'apartamento à venda jardim botânico curitiba',
+      'apartamento 2 quartos suíte curitiba',
+      'apartamento à venda curitiba centro',
+      'residencial botanique à venda',
+      'apartamento com 2 vagas jardim botânico',
+      'apartamento acabamento luxo curitiba',
+      'apartamento à venda urgente curitiba',
+      'apartamento jardim botânico oportunidade',
+      'apartamento curitiba investimento',
+      'apartamento à venda com desconto',
+      'apartamento 89m² jardim botânico',
+      'apartamento condomínio fechado curitiba',
+      'apartamento à venda último andar',
+      'apartamento à venda oportunidade única',
+      'apartamento à venda para família',
+      'apartamento à venda com garagem',
+      'apartamento à venda com academia',
+      'apartamento à venda com salão de festas',
+      'apartamento à venda com sacada gourmet',
+      'apartamento à venda área nobre curitiba',
+      'apartamento à venda valorização garantida',
+      'apartamento à venda localização privilegiada',
+      'apartamento à venda acabamento premium',
+      'apartamento à venda infraestrutura completa'
     ]
   },
 

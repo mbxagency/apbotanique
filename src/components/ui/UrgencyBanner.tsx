@@ -31,7 +31,7 @@ export default function UrgencyBanner () {
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
         <div className="flex items-center space-x-2">
           <span className="text-xl">🔥</span>
-          <span className="font-bold">PROMOÇÃO ESPECIAL</span>
+          <span className="font-bold">OPORTUNIDADE ÚNICA!</span>
           <span className="text-xl">🔥</span>
         </div>
 

@@ -7,10 +7,10 @@ export default function PriceHighlight () {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
-              🎯 Oferta Especial
+              🔥 OPORTUNIDADE ÚNICA! 🔥
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 font-body">
-              Desconto exclusivo por tempo limitado
+              <strong>ÚLTIMA UNIDADE DISPONÍVEL!</strong> Desconto exclusivo por tempo limitado
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default function PriceHighlight () {
                     <span className="text-xl sm:text-2xl">🎉</span>
                   </div>
                   <p className="text-green-100 font-body text-sm sm:text-base">
-                    Aproveite esta oportunidade única!
+                    <strong>Não perca esta oportunidade única!</strong> Última unidade disponível!
                   </p>
                 </div>
 
@@ -84,7 +84,7 @@ export default function PriceHighlight () {
                     <span className="font-bold font-heading text-sm sm:text-base">Oferta por Tempo Limitado</span>
                   </div>
                   <p className="text-red-700 text-xs sm:text-sm font-body">
-                    Não perca esta oportunidade única de economia!
+                    <strong>ÚLTIMA CHANCE!</strong> Não perca esta oportunidade única de economia!
                   </p>
                 </div>
               </div>
