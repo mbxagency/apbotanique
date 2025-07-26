@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from '@/components/sections/Hero'
 import QuickInfo from '@/components/sections/QuickInfo'
 import PriceHighlight from '@/components/sections/PriceHighlight'
