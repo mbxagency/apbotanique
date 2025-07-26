@@ -11,7 +11,7 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-heading text-white">🔥 RESERVE AGORA - ÚLTIMA UNIDADE!</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-heading text-white">🔥 RESERVE AGORA - UNIDADE PROMOCIONAL!</h2>
 
             {/* Informações do Corretor */}
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 mb-8">
@@ -46,14 +46,28 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
                 href="https://wa.me/5541991328657?text=Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de saber mais informações. Código: ARA179."
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={onWhatsAppClick}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.trackWhatsAppClick) {
+                    window.trackWhatsAppClick();
+                  }
+                  if (onWhatsAppClick) {
+                    onWhatsAppClick();
+                  }
+                }}
                 className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors duration-300 flex items-center justify-center gap-2"
               >
                 📱 WhatsApp
               </a>
               <a
                 href="tel:+5541991328657"
-                onClick={onPhoneClick}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.trackPhoneCall) {
+                    window.trackPhoneCall();
+                  }
+                  if (onPhoneClick) {
+                    onPhoneClick();
+                  }
+                }}
                 className="bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2"
               >
                 📞 Telefone

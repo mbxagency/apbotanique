@@ -75,6 +75,11 @@ export default function Header () {
                 href="https://wa.me/5541991328657?text=Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de saber mais informações. Código: ARA179."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.trackWhatsAppClick) {
+                    window.trackWhatsAppClick();
+                  }
+                }}
                 className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm font-medium"
               >
                 📱 WhatsApp

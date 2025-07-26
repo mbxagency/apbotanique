@@ -172,6 +172,56 @@ export default function RootLayout({
           `}
         </Script>
         
+        {/* Event snippets for conversion tracking */}
+        <Script id="google-events" strategy="afterInteractive">
+          {`
+            // Função para rastrear conversões
+            function trackConversion(action, label) {
+              gtag('event', 'conversion', {
+                'send_to': 'AW-17368785898/RRFcCMid8PIaEOrHitpA',
+                'event_category': 'engagement',
+                'event_action': action,
+                'event_label': label
+              });
+            }
+            
+            // Rastrear cliques em WhatsApp
+            function trackWhatsAppClick() {
+              trackConversion('whatsapp_click', 'reserva_whatsapp');
+            }
+            
+            // Rastrear agendamento de visita
+            function trackVisitScheduling() {
+              trackConversion('visit_scheduling', 'agendar_visita');
+            }
+            
+            // Rastrear visualização de fotos
+            function trackPhotoView() {
+              trackConversion('photo_view', 'ver_fotos');
+            }
+            
+            // Rastrear contato por telefone
+            function trackPhoneCall() {
+              trackConversion('phone_call', 'contato_telefone');
+            }
+            
+            // Rastrear scroll até seção de contato
+            function trackContactScroll() {
+              trackConversion('contact_scroll', 'secao_contato');
+            }
+            
+            // Disponibilizar funções globalmente
+            window.trackConversion = trackConversion;
+            window.trackWhatsAppClick = trackWhatsAppClick;
+            window.trackVisitScheduling = trackVisitScheduling;
+            window.trackPhotoView = trackPhotoView;
+            window.trackPhoneCall = trackPhoneCall;
+            window.trackContactScroll = trackContactScroll;
+          `}
+        </Script>
+        
+
+        
         {/* Schema.org structured data */}
         <Script
           type="application/ld+json"

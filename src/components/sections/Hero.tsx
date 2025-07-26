@@ -79,7 +79,7 @@ export default function Hero () {
               <strong>OPORTUNIDADE ÚNICA!</strong> Residencial Botanique
             </p>
             <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 text-gray-300 font-body">
-              <strong>ÚLTIMA UNIDADE</strong> - Jardim Botânico, Curitiba | <strong>Desconto Especial!</strong>
+              <strong>UNIDADE PROMOCIONAL</strong> - Jardim Botânico, Curitiba | <strong>Desconto Especial!</strong>
             </p>
 
             {/* Informações do Imóvel */}
@@ -115,6 +115,11 @@ export default function Hero () {
                 href="https://wa.me/5541991328657?text=Olá! Tenho interesse no apartamento do Residencial Botanique, no Jardim Botânico. Gostaria de saber mais informações. Código: ARA179."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.trackWhatsAppClick) {
+                    window.trackWhatsAppClick();
+                  }
+                }}
                 className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg font-bold hover:from-green-700 hover:to-green-800 transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <span className="text-sm sm:text-lg md:text-xl">📱</span>
@@ -122,6 +127,11 @@ export default function Hero () {
               </a>
               <a
                 href="#galeria"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.trackPhotoView) {
+                    window.trackPhotoView();
+                  }
+                }}
                 className="bg-white/20 backdrop-blur-md text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg font-bold hover:bg-white/30 transition-all duration-300 border-2 border-white/30 flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <span className="text-sm sm:text-lg md:text-xl">📸</span>

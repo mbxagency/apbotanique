@@ -12,8 +12,10 @@ import RegionDevelopment from '@/components/sections/RegionDevelopment'
 import PropertyHighlights from '@/components/sections/PropertyHighlights'
 import Contact from '@/components/sections/Contact'
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp'
+import { useScrollTracking } from '@/hooks/useScrollTracking'
 
 export default function Home() {
+  useScrollTracking()
   return (
     <main className="min-h-screen">
       <Hero />

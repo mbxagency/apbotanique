@@ -12,6 +12,10 @@ export default function FloatingWhatsApp ({onClick}: FloatingWhatsAppProps) {
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, '_blank');
 
+    if (typeof window !== 'undefined' && window.trackWhatsAppClick) {
+      window.trackWhatsAppClick();
+    }
+
     if (onClick) {
       onClick();
     }
