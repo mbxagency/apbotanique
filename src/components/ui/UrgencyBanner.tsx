@@ -29,11 +29,11 @@ export default function UrgencyBanner () {
   return (
     <div className="bg-gradient-to-r from-red-500 to-red-600 text-white py-3 px-4 text-center animate-pulse-soft">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-        <div className="flex items-center space-x-2">
-          <span className="text-xl">🔥</span>
-          <span className="font-bold">OPORTUNIDADE ÚNICA!</span>
-          <span className="text-xl">🔥</span>
-        </div>
+                  <div className="flex items-center space-x-2">
+            <span className="text-xl">⭐</span>
+            <span className="font-bold">OPORTUNIDADE ÚNICA!</span>
+            <span className="text-xl">⭐</span>
+          </div>
 
         <div className="flex items-center space-x-2">
           <span className="text-sm">Termina em:</span>

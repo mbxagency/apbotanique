@@ -16,8 +16,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
-  description: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial! Agende sua visita hoje mesmo!',
+  title: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
+  description: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial! Agende sua visita hoje mesmo!',
   keywords: [
     'apartamento à venda jardim botânico curitiba',
     'apartamento 2 quartos suíte curitiba',
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
-    description: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial! Agende sua visita hoje mesmo!',
+    title: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
+    description: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial! Agende sua visita hoje mesmo!',
     url: 'https://apbotanique.vercel.app',
     siteName: 'Arau Imóveis - Apartamento à Venda',
     images: [
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
-    description: '🔥 APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial!',
+    title: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO CURITIBA | ÚLTIMA UNIDADE | Desconto Especial!',
+    description: 'APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial!',
     images: ['/images/fachada/fachada1.jpg'],
   },
   robots: {

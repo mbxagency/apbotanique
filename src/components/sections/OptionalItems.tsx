@@ -25,7 +25,7 @@ export default function OptionalItems () {
     {
       name: 'Cooktop Brastemp 4 Bocas',
       description: 'Duplachama Timer Touch Preto',
-      icon: '🔥'
+      icon: '⭐'
     },
     {
       name: 'Cama Box',
@@ -45,7 +45,7 @@ export default function OptionalItems () {
     {
       name: 'Forno de Embutir Elétrico Brastemp',
       description: '84 Litros Cor Inox Espelhado com Convecção e Timer Touch',
-      icon: '🔥'
+      icon: '⭐'
     },
     {
       name: 'Micro-ondas de Embutir 34L Philco',

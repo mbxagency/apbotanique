@@ -73,7 +73,7 @@ export default function Hero () {
         <div className="absolute inset-0 flex flex-col justify-center pb-8 sm:pb-12 md:pb-16 z-10 px-4">
           <div className="text-center text-white w-full max-w-4xl mx-auto">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 font-heading text-shadow-lg leading-tight">
-              🔥 APARTAMENTO À VENDA 🔥
+              APARTAMENTO À VENDA
             </h1>
             <p className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-gray-200 font-heading text-shadow">
               <strong>OPORTUNIDADE ÚNICA!</strong> Residencial Botanique

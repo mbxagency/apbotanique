@@ -11,7 +11,7 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-heading text-white">🔥 RESERVE AGORA - UNIDADE PROMOCIONAL!</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-heading text-white">RESERVE AGORA - UNIDADE PROMOCIONAL!</h2>
 
             {/* Informações do Corretor */}
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 mb-8">
