@@ -43,6 +43,20 @@ export default function QuickInfo () {
             </div>
           ))}
         </div>
+        
+        {/* Admin Button */}
+        <div className="text-center mt-8 p-4 bg-white rounded-xl shadow-lg border-2 border-gray-200">
+          <p className="text-sm text-gray-600 mb-2">Portal Administrativo</p>
+          <a
+            href="/admin"
+            className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-red-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Acessar Portal Admin
+          </a>
+        </div>
       </div>
     </section>
   );

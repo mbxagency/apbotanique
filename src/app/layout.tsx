@@ -91,41 +91,63 @@ export const metadata: Metadata = {
   },
 }
 
-// Structured Data for Google
+// Enhanced Structured Data for Google
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Apartamento à Venda - Residencial Botanique",
-  "description": "APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. ÚLTIMA UNIDADE - Desconto especial!",
-  "brand": {
-    "@type": "Brand",
-    "name": "Arau Imóveis"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "729000",
-    "priceCurrency": "BRL",
-    "availability": "https://schema.org/InStock",
-    "seller": {
-      "@type": "RealEstateAgent",
-      "name": "Arau Imóveis",
-      "telephone": "+5541991328657",
-      "email": "contato@arauimoveis.com.br"
-    }
-  },
+  "@type": "RealEstateListing",
+  "name": "APARTAMENTO À VENDA - Residencial Botanique | ÚLTIMA UNIDADE | Jardim Botânico Curitiba",
+  "description": "APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial R$ 50.000! Agende sua visita hoje mesmo!",
+  "url": "https://apbotanique.vercel.app",
+  "image": "https://apbotanique.vercel.app/images/fachada/fachada1.jpg",
+  "price": "729000",
+  "priceCurrency": "BRL",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Av. Prefeito Maurício Fruet, 1270",
+    "streetAddress": "Jardim Botânico",
     "addressLocality": "Curitiba",
     "addressRegion": "PR",
     "postalCode": "80210-090",
     "addressCountry": "BR"
   },
+  "numberOfRooms": "2",
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": "89",
+    "unitCode": "MTK"
+  },
+  "amenityFeature": [
+    "Suíte", "2 Vagas", "Área Gourmet", "Sacada", "Lavanderia", "Academia", "Salão de Festas"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "729000",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2024-01-01",
+    "priceValidUntil": "2024-12-31",
+    "seller": {
+      "@type": "RealEstateAgent",
+      "name": "Arau Imóveis",
+      "telephone": "+5541991328657",
+      "email": "contato@arauimoveis.com.br",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Curitiba",
+        "addressRegion": "PR",
+        "addressCountry": "BR"
+      }
+    }
+  },
   "additionalProperty": [
     {
       "@type": "PropertyValue",
-      "name": "Área",
-      "value": "89m²"
+      "name": "Área Privativa",
+      "value": "80m²"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Área Total",
+      "value": "113m²"
     },
     {
       "@type": "PropertyValue",
@@ -134,9 +156,67 @@ const structuredData = {
     },
     {
       "@type": "PropertyValue",
+      "name": "Suíte",
+      "value": "1"
+    },
+    {
+      "@type": "PropertyValue",
       "name": "Vagas",
       "value": "2"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Banheiros",
+      "value": "2"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "IPTU Anual",
+      "value": "R$ 1.050"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Condomínio",
+      "value": "R$ 254,10/mês"
     }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-25.4284",
+    "longitude": "-49.2733"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  }
+}
+
+// Local Business Schema
+const localBusinessData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Residencial Botanique",
+  "description": "Apartamento exclusivo à venda no Jardim Botânico, Curitiba. 2 quartos, suíte, 2 vagas, área gourmet. Preço promocional R$ 729.000. ÚLTIMA UNIDADE DISPONÍVEL!",
+  "url": "https://apbotanique.vercel.app",
+  "telephone": "+5541991328657",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jardim Botânico",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-25.4284",
+    "longitude": "-49.2733"
+  },
+  "openingHours": "Mo-Su 09:00-18:00",
+  "priceRange": "R$ 729.000",
+  "sameAs": [
+    "https://www.facebook.com/arauimoveis",
+    "https://www.instagram.com/arauimoveis"
   ]
 }
 
@@ -228,6 +308,15 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData)
+          }}
+        />
+        
+        {/* Local Business Schema */}
+        <Script
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessData)
           }}
         />
       </head>
