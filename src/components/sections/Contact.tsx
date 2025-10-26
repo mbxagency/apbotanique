@@ -90,7 +90,7 @@ export default function Contact ({onWhatsAppClick, onPhoneClick}: ContactProps) 
                 </div>
                 <div className="flex items-center gap-2">
                   <span>Preço:</span>
-                  <span>R$ 729.000,00</span>
+                  <span>R$ 769.000,00</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>🏠</span>
