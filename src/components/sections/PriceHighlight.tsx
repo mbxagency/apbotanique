@@ -22,7 +22,7 @@ export default function PriceHighlight () {
 
               <div className="text-center w-full">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 font-heading">
-                  Desconto de R$ 50.000
+                  Desconto de R$ 20.000
                 </h3>
 
                 {/* Preços com destaque */}
