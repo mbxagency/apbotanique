@@ -191,7 +191,7 @@ NEXT_PUBLIC_ANALYTICS_ENABLED=true
 - **Ano**: 2020 (primeiro morador)
 
 ### Valores
-- **Preço**: R$ 729.000,00
+- **Preço**: R$ 769.000,00
 - **Condomínio**: R$ 254,10/mês
 - **IPTU**: R$ 1.050/ano
 - **Economia**: 21% abaixo da média
