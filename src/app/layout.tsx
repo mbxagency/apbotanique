@@ -96,7 +96,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "RealEstateListing",
   "name": "APARTAMENTO À VENDA - Residencial Botanique | ÚLTIMA UNIDADE | Jardim Botânico Curitiba",
-  "description": "APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial R$ 50.000! Agende sua visita hoje mesmo!",
+  "description": "APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos (1 suíte) + 2 vagas, 113m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. Agende sua visita hoje mesmo!",
   "url": "https://apbotanique.vercel.app",
   "image": "https://apbotanique.vercel.app/images/fachada/fachada1.jpg",
   "price": "769000",
