@@ -12,7 +12,7 @@ export const siteConfig = {
     bedrooms: 2,
     suites: 1,
     parking: 2,
-    price: 'R$ 729.000,00',
+    price: 'R$ 769.000,00',
     address: {
       street: 'Av. Prefeito Maurício Fruet, 1270',
       neighborhood: 'Jardim Botânico',
