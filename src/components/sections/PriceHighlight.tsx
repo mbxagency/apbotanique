@@ -29,7 +29,7 @@ export default function PriceHighlight () {
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
                   <div className="text-center">
                     <div className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2 font-body">Preço Original</div>
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-400 line-through">R$ 779.000</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-400 line-through">R$ 789.000</div>
                   </div>
 
                   <div className="text-3xl sm:text-4xl text-red-500 animate-pulse font-bold">
@@ -38,14 +38,14 @@ export default function PriceHighlight () {
 
                   <div className="text-center">
                     <div className="text-xs sm:text-sm text-green-600 mb-1 sm:mb-2 font-body">Preço com Desconto</div>
-                    <div className="text-3xl sm:text-4xl font-bold text-green-700">R$ 729.000</div>
+                    <div className="text-3xl sm:text-4xl font-bold text-green-700">R$ 769.000</div>
                   </div>
                 </div>
 
                 {/* Destaque da economia */}
                 <div className="bg-gradient-to-r from-green-500 to-green-600 p-4 sm:p-6 rounded-lg sm:rounded-xl mb-4 sm:mb-6 text-white text-center">
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
-                    <span className="text-lg sm:text-2xl font-bold font-heading">Economia de R$ 50.000</span>
+                    <span className="text-lg sm:text-2xl font-bold font-heading">Economia de R$ 20.000</span>
                   </div>
                   <p className="text-green-100 font-body text-sm sm:text-base">
                     <strong>Não perca esta oportunidade única!</strong> Unidade promocional!
