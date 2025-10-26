@@ -99,7 +99,7 @@ const structuredData = {
   "description": "APARTAMENTO À VENDA NO JARDIM BOTÂNICO! 2 quartos + suíte, 89m², acabamento de luxo, 2 vagas. Localização privilegiada em Curitiba. ÚLTIMA UNIDADE - Desconto especial R$ 50.000! Agende sua visita hoje mesmo!",
   "url": "https://apbotanique.vercel.app",
   "image": "https://apbotanique.vercel.app/images/fachada/fachada1.jpg",
-  "price": "729000",
+  "price": "769000",
   "priceCurrency": "BRL",
   "address": {
     "@type": "PostalAddress",
@@ -120,7 +120,7 @@ const structuredData = {
   ],
   "offers": {
     "@type": "Offer",
-    "price": "729000",
+    "price": "769000",
     "priceCurrency": "BRL",
     "availability": "https://schema.org/InStock",
     "validFrom": "2024-01-01",
@@ -197,7 +197,7 @@ const localBusinessData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Residencial Botanique",
-  "description": "Apartamento exclusivo à venda no Jardim Botânico, Curitiba. 2 quartos, suíte, 2 vagas, área gourmet. Preço promocional R$ 729.000. ÚLTIMA UNIDADE DISPONÍVEL!",
+  "description": "Apartamento exclusivo à venda no Jardim Botânico, Curitiba. 2 quartos, suíte, 2 vagas, área gourmet. Preço promocional R$ 769.000. ÚLTIMA UNIDADE DISPONÍVEL!",
   "url": "https://apbotanique.vercel.app",
   "telephone": "+5541991328657",
   "address": {
@@ -213,7 +213,7 @@ const localBusinessData = {
     "longitude": "-49.2733"
   },
   "openingHours": "Mo-Su 09:00-18:00",
-  "priceRange": "R$ 729.000",
+  "priceRange": "R$ 769.000",
   "sameAs": [
     "https://www.facebook.com/arauimoveis",
     "https://www.instagram.com/arauimoveis"
