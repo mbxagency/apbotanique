@@ -57,7 +57,7 @@ export default function Home() {
       {/* SEO Hidden Content for Google */}
       <div className="sr-only">
         <h2>Apartamento à Venda Curitiba Jardim Botânico</h2>
-        <p>Apartamento 2 quartos suíte à venda no Jardim Botânico Curitiba. Imóvel com 2 vagas, área gourmet, acabamento de luxo. Preço promocional R$ 769.000. Condomínio R$ 254,10/mês. Localização privilegiada próximo ao Shopping Total, UFPR, Parque Autódromo. Última unidade disponível com desconto especial. Agende sua visita hoje mesmo!</p>
+        <p>Apartamento 2 quartos suíte à venda no Jardim Botânico Curitiba. Imóvel com 2 vagas, área gourmet, acabamento de luxo. Preço promocional R$ 769.000. Condomínio R$ 254,10/mês. Localização privilegiada próximo ao Shopping Jardim das Américas, UFPR, Parque Autódromo. Última unidade disponível com desconto especial. Agende sua visita hoje mesmo!</p>
         <h3>Palavras-chave: apartamento à venda curitiba, imóvel jardim botânico, apartamento 2 quartos suíte, vagas garagem curitiba, área gourmet, condomínio barato, apartamento promocional, oportunidade única, investimento imobiliário, localização estratégica, parque autódromo, shopping total, ufpr, apartamento com suíte, 2 vagas, sacada gourmet, lavanderia, academia, salão de festas, primeiro morador 2020, iptu baixo, valorização garantida, acabamento premium, infraestrutura completa</h3>
       </div>
     </main>
