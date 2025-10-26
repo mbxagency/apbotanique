@@ -36,7 +36,7 @@ export const IMAGE_CONFIG = {
 export const SEO_CONFIG = {
   titleTemplate: '%s | Botanique - Arau Imóveis',
   defaultTitle: 'Botanique - Apartamento no Jardim Botânico | Arau Imóveis',
-  defaultDescription: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba. 2 quartos (1 suíte), 2 vagas, academia, áreas comuns. R$ 729.000,00',
+  defaultDescription: 'Apartamento semi mobiliado de 80m² no Jardim Botânico, Curitiba. 2 quartos (1 suíte), 2 vagas, academia, áreas comuns. R$ 769.000,00',
   siteUrl: 'https://botanique.arauimoveis.com.br',
   openGraph: {
     type: 'website',
@@ -121,7 +121,7 @@ export const PROPERTY_CONFIG = {
   bedrooms: 2,
   suites: 1,
   parking: 2,
-  price: 'R$ 729.000,00',
+  price: 'R$ 769.000,00',
   features: [
     'Academia completa',
     'Salão de festas',
