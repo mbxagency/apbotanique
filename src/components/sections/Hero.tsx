@@ -88,10 +88,10 @@ export default function Hero () {
               <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-400 line-through mb-1">
-                    R$ 779.000
+                    R$ 789.000
                   </div>
                   <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-green-400 mb-1 sm:mb-2 text-shadow">
-                    R$ 729.000
+                    R$ 769.000
                   </div>
                   <div className="text-xs text-gray-300 font-body">Preço com Desconto</div>
                 </div>
